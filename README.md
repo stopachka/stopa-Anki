@@ -1,5 +1,7 @@
 # stopa-Anki
 
+[Open the app](https://stopa-anki.vercel.app) · [Source on GitHub](https://github.com/stopachka/stopa-Anki)
+
 A minimal, mobile-first Chinese study app built with React, TypeScript, and Vite. Choose a book, tap the traditional Chinese word to reveal its pinyin and English meaning, and rate your recall. The writing pad is always available, with a faint Hanzi stroke guide that repeats automatically while you draw, pausing briefly between loops. Automatic animation respects reduced-motion preferences. Drawing is optional practice; it is not automatically graded.
 
 ## Run locally
@@ -19,6 +21,12 @@ npm test
 ```
 
 The build checks TypeScript and creates `dist/`. Tests cover the scheduling and review-selection behavior. `npm run preview` serves the production build locally.
+
+## Deployment
+
+Vercel deploys the `main` branch of this repository to [stopa-anki.vercel.app](https://stopa-anki.vercel.app). Build settings are checked in as `vercel.json`: install with `npm ci`, build with `npm run build`, and serve `dist/`.
+
+The hosted app uses the same InstantDB app as local development. Sign in with the same email to access your saved reviews. No OpenAI or Instant admin key is needed by the website. For an independent fork, use your own Instant app ID in `src/lib/db.ts` and apply the included schema and permissions to that app.
 
 ## Vocabulary and scheduling
 
