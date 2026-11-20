@@ -102,11 +102,11 @@
 .signout-button{font-size:13px;line-height:1.4;color:#737373;padding:8px 0 8px 10px;min-height:40px}
 .signout-button:hover:not(:disabled){color:#222}
 .signout-error{text-align:right;color:#a33d3d;font-size:12px;line-height:1.5;margin:-8px 0 14px}
-.home-about{display:flex;align-items:center;justify-content:center;gap:4px;margin:23px 0 28px}
-.home-about button{color:#737373;font-size:12px;line-height:1.4;padding:9px 12px}
-.home-about button:hover{color:#333;text-decoration:underline;text-underline-offset:3px}
-.home-about .home-refresh{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%}
-.home-about .home-refresh:hover:not(:disabled){background:#f4f4f4;text-decoration:none}
+.home-tools{display:flex;align-items:center;justify-content:center;gap:4px;margin:23px 0 28px}
+.home-tools button{color:#737373;font-size:12px;line-height:1.4;padding:9px 12px}
+.home-tools button:hover{color:#333;text-decoration:underline;text-underline-offset:3px}
+.home-tools .home-refresh{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%}
+.home-tools .home-refresh:hover:not(:disabled){background:#f4f4f4;text-decoration:none}
 .pronunciation-button{width:40px;min-width:40px;padding:0}
 /* Keep study navigation and queue counts quiet; ratings carry their familiar colors. */
 .study-heading{display:grid;grid-template-columns:40px 1fr 40px;gap:8px}
@@ -123,10 +123,10 @@
 .rating-interval{color:inherit;opacity:.85}
 /* A full card surface flips between handwriting and the complete answer. */
 .flashcard{position:relative;justify-content:center;min-height:0;padding:24px 0}
-.card-tap-target{position:absolute;inset:0;width:100%;height:100%;padding:0;border-radius:16px;touch-action:manipulation}
+.card-tap-target{position:fixed;inset:0;z-index:0;width:100%;height:100%;padding:0;touch-action:manipulation}
 .card-tap-target:focus-visible{outline:2px solid #b5b5b5;outline-offset:-2px}
 .card-face{position:relative;display:flex;flex-direction:column;align-items:center;width:100%;text-align:center;pointer-events:none}
-.card-face .word-tools,.card-face .practice-area{pointer-events:auto}
+.card-face .word-tools,.card-face .practice-area{pointer-events:none}
 .card-word.hanzi-word{width:100%;font-size:54px;line-height:1.4;margin:8px 0 6px;padding:0 8px}
 .card-word.hanzi-word.long-word{font-size:35px}
 .card-face .tool-button{height:36px;border-color:transparent}
@@ -188,3 +188,11 @@ html:has(.study-shell),body:has(.study-shell){overflow:hidden;overscroll-behavio
   .study-shell .review-footer{padding-top:4px}
   .study-shell .rating-slot,.study-shell .rating-button,.study-shell .reveal-button{min-height:46px}
 }
+
+/* Blank space flips the card; only actual controls and pen input intercept taps. */
+.study-shell{isolation:isolate}
+.study-shell .study-main{pointer-events:none}
+.study-shell .study-heading,.study-shell .session-progress,.study-shell .flashcard,.study-shell .review-footer{position:relative;z-index:1;pointer-events:none}
+.study-shell .review-footer{background:transparent}
+.study-shell button,.study-shell .practice-ink{pointer-events:auto}
+.study-shell .word-tools,.study-shell .practice-area{pointer-events:none}

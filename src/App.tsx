@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, Check, RefreshCw, X } from 'lucide-react';
+import { ArrowLeft, Check, RefreshCw } from 'lucide-react';
 import { State, type Grade } from 'ts-fsrs';
 import type { Book, Word } from './types';
 import { grades, intervalLabel, nextWord, summarizeWords, type Memories, type Scheduler, type WordCounts } from './lib/scheduler';
@@ -18,24 +18,6 @@ function StudyCounts({ counts, className = '', compact = false }: { counts: Word
   </span>;
 }
 
-function About({ onClose }: { onClose: () => void }) {
-  const dialog = useRef<HTMLDialogElement>(null);
-  useEffect(() => {
-    const element = dialog.current;
-    element?.showModal();
-    return () => element?.close();
-  }, []);
-  return <dialog ref={dialog} className="about-dialog" aria-labelledby="about-title" onCancel={onClose} onClick={event => { if (event.target === dialog.current) onClose(); }}>
-    <div className="dialog-heading"><h2 id="about-title">About stopa-Anki</h2><button className="icon-button" aria-label="Close about" onClick={onClose}><X size={20} /></button></div>
-    <p>Tap the card or Show answer to reveal the character, pinyin, and meaning together. Tap the answer to return to handwriting practice.</p>
-    <p>The review buttons rate your recall of the word’s meaning. Drawing is optional practice and isn’t automatically graded.</p>
-    <p>New counts unseen cards. Learning includes cards waiting for another learning step. Review counts review cards due now.</p>
-    <div className="about-note"><strong>Saved to your account</strong><p>Your review history and next review dates sync when you’re signed in.</p></div>
-    <p className="source-note">Vocabulary comes from Olle Linge’s Practical Audio-Visual Chinese lists, Books 1–3. Pronunciation audio is AI-generated with OpenAI. Stroke guides use Hanzi Writer; some stroke conventions may differ from Taiwan’s standards.</p>
-    <div className="source-links"><a href="/data/README.md" target="_blank" rel="noreferrer">Vocabulary sources</a><a href="/hanzi/README.md" target="_blank" rel="noreferrer">Stroke data</a></div>
-  </dialog>;
-}
-
 function StudyCard({ word, memory, scheduler, counts, saving, onGrade }: {
   word: Word;
   memory: Memories[string] | undefined;
@@ -51,11 +33,10 @@ function StudyCard({ word, memory, scheduler, counts, saving, onGrade }: {
   const [pending, setPending] = useState(false);
   const submitting = useRef(false);
   const cardButton = useRef<HTMLButtonElement>(null);
-  const revealButton = useRef<HTMLButtonElement>(null);
   // Keep this presentation's scheduling input stable while Instant updates optimistically.
   const [card] = useState(() => memory ?? scheduler.newCard({ cardId: word.id, now: enteredAt }));
   const predictions = useMemo(() => grades.map(({ rating, label }) => ({ rating, label, interval: intervalLabel(scheduler.review({ card, grade: rating, now: previewAt }).card.dueAt, previewAt) })), [card, previewAt, scheduler]);
-  useEffect(() => { revealButton.current?.focus({ preventScroll: true }); }, []);
+  useEffect(() => { cardButton.current?.focus({ preventScroll: true }); }, []);
   const flip = () => {
     if (saving || pending) return;
     if (!revealed) setPreviewAt(new Date());
@@ -73,8 +54,8 @@ function StudyCard({ word, memory, scheduler, counts, saving, onGrade }: {
   };
 
   return <>
+    <button ref={cardButton} className="card-tap-target" disabled={saving || pending} aria-label={`${revealed ? 'Show question' : 'Reveal answer'} for ${word.traditional}`} aria-expanded={revealed} aria-controls="word-answer" onClick={flip} />
     <div className={`study-content flashcard ${revealed ? 'is-revealed' : ''}`}>
-      <button ref={cardButton} className="card-tap-target" disabled={saving || pending} aria-label={`${revealed ? 'Show question' : 'Reveal answer'} for ${word.traditional}`} aria-expanded={revealed} aria-controls="word-answer" onClick={flip} />
       <div className="card-face">
         <div className="word-context"><span>Chapter {word.chapter}</span><span className="context-separator">·</span><span>{card.state === State.New ? 'New' : card.state === State.Review ? 'Review' : 'Learning'}</span></div>
         <h1 className={`hanzi-word card-word ${word.traditional.length > 4 ? 'long-word' : ''}`} lang="zh-Hant">{word.traditional}</h1>
@@ -82,11 +63,11 @@ function StudyCard({ word, memory, scheduler, counts, saving, onGrade }: {
           {revealed && <><p className="pinyin">{word.pinyin}</p><p className="meaning">{word.english}</p></>}
         </div>
         <div className="word-tools"><Pronunciation word={word} /></div>
-        <div className="card-writing" hidden={revealed}><WritingPad word={word.traditional} active={!revealed} /></div>
+        <div className="card-writing" hidden={revealed}><WritingPad word={word.traditional} active={!revealed} onTap={flip} /></div>
       </div>
     </div>
     <footer className="review-footer" aria-busy={saving || pending}>
-      <div className="rating-slot">{revealed ? <div className="rating-buttons" aria-label="Rate your recall">{predictions.map(({ rating, label, interval }) => <button key={rating} className={`rating-button rating-${label.toLowerCase()}`} disabled={saving || pending} onClick={() => { void submit(rating); }}><span>{label}</span><span className="rating-interval">{interval}</span></button>)}</div> : <button ref={revealButton} className="primary-button reveal-button" disabled={saving || pending} onClick={flip}>Show answer</button>}</div>
+      <div className="rating-slot">{revealed && <div className="rating-buttons" aria-label="Rate your recall">{predictions.map(({ rating, label, interval }) => <button key={rating} className={`rating-button rating-${label.toLowerCase()}`} disabled={saving || pending} onClick={() => { void submit(rating); }}><span>{label}</span><span className="rating-interval">{interval}</span></button>)}</div>}</div>
       {(saving || pending) && <span className="sr-only" role="status">Saving review</span>}
       {saveError && <p className="save-error" role="alert">{saveError}</p>}
       <StudyCounts counts={counts} className="footer-counts" compact />
@@ -99,7 +80,6 @@ export default function App({ books, words, scheduler, user }: AppProps) {
   const [currentId, setCurrentId] = useState<string | null>(null);
   const { memories, isLoading, error, saving, syncPending, saveReview } = useProgress({ userId: user.id });
   const [reviewTurn, setReviewTurn] = useState(0);
-  const [about, setAbout] = useState(false);
   const [signingOut, setSigningOut] = useState(false);
   const [accountError, setAccountError] = useState('');
   const [clock, setClock] = useState(() => new Date());
@@ -158,12 +138,11 @@ export default function App({ books, words, scheduler, user }: AppProps) {
           <StudyCounts counts={bookCounts} />
         </button>;
       })}</div>
-      <div className="home-about"><button onClick={() => setAbout(true)}>About</button><button className="home-refresh" disabled={saving || signingOut} aria-label="Refresh app" title="Refresh app" onClick={() => window.location.reload()}><RefreshCw size={16} aria-hidden="true" /></button></div>
+      <div className="home-tools"><button className="home-refresh" disabled={saving || signingOut} aria-label="Refresh app" title="Refresh app" onClick={() => window.location.reload()}><RefreshCw size={16} aria-hidden="true" /></button></div>
     </main> : <main className="study-main">
       <div className="study-heading"><button className="books-button" disabled={saving} onClick={closeBook} aria-label="Back to books" title="Back to books"><ArrowLeft size={20} aria-hidden="true" /></button><span className="study-book-title">{selectedBook.title}</span></div>
       <div className="session-progress"><div className="progress-track" role="progressbar" aria-label="Cards started" aria-valuemin={0} aria-valuemax={counts.total} aria-valuenow={counts.started}><span style={{ width: `${counts.total ? (counts.started / counts.total) * 100 : 0}%` }} /></div><span>{counts.started} / {counts.total}</span></div>
       {current ? <StudyCard key={`${current.id}-${reviewTurn}`} word={current} memory={memories[current.id]} scheduler={scheduler} counts={counts} saving={saving} onGrade={grade} /> : <><div className="complete-state"><span className="complete-icon"><Check size={26} strokeWidth={1.6} /></span><h1>Caught up</h1>{nextDue && <p className="next-review">Next review · {intervalLabel(nextDue, clock)}</p>}<button className="primary-button" disabled={saving} onClick={closeBook}>Your books</button></div><footer className="review-footer complete-footer"><StudyCounts counts={counts} className="footer-counts" compact /></footer></>}
     </main>}
-    {about && <About onClose={() => setAbout(false)} />}
   </div>;
 }

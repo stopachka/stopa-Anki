@@ -57,7 +57,7 @@ export function Pronunciation({ word }: { word: Word }) {
   };
 
   return <div className="pronunciation-control">
-    <button className="tool-button pronunciation-button" onClick={play} disabled={!recording} aria-label={playing ? 'Stop pronunciation' : `Listen to ${word.traditional}`} title={recording ? 'Mandarin pronunciation' : word.book === 1 ? 'Audio is being prepared' : 'Audio not added yet'}>
+    <button className="tool-button pronunciation-button" onClick={play} disabled={!recording} aria-label={playing ? 'Stop pronunciation' : `Listen to ${word.traditional}`} title={recording ? 'AI-generated Mandarin pronunciation' : word.book === 1 ? 'Audio is being prepared' : 'Audio not added yet'}>
       {playing ? <Square size={16} /> : <Volume2 size={18} />}
     </button>
     {error && <span className="audio-error" role="status">{error}</span>}

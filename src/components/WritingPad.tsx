@@ -8,7 +8,7 @@ type Stroke = Point[];
 const SIZE = 300;
 const pathOf = (points: Stroke) => points.map((point, i) => `${i ? 'L' : 'M'} ${point.x} ${point.y}`).join(' ');
 
-export function WritingPad({ word, active = true }: { word: string; active?: boolean }) {
+export function WritingPad({ word, active = true, onTap }: { word: string; active?: boolean; onTap: () => void }) {
   const characters = Array.from(word);
   const [index, setIndex] = useState(0);
   const [drawings, setDrawings] = useState<Record<number, Stroke[]>>({});
@@ -19,6 +19,8 @@ export function WritingPad({ word, active = true }: { word: string; active?: boo
   const autoTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const activePointer = useRef<number | null>(null);
   const currentRef = useRef<Stroke>([]);
+  const gesture = useRef<{ x: number; y: number; startedAt: number; moved: boolean } | null>(null);
+  const tapReady = useRef(false);
   const character = characters[index];
   const strokes = drawings[index] ?? [];
 
@@ -87,23 +89,29 @@ export function WritingPad({ word, active = true }: { word: string; active?: boo
   const start = (event: PointerEvent<SVGSVGElement>) => {
     if (activePointer.current !== null || (event.pointerType === 'mouse' && event.button !== 0)) return;
     event.preventDefault();
+    tapReady.current = false;
+    gesture.current = { x: event.clientX, y: event.clientY, startedAt: performance.now(), moved: false };
     activePointer.current = event.pointerId;
     event.currentTarget.setPointerCapture(event.pointerId);
     currentRef.current = [position(event)];
-    setCurrent(currentRef.current);
+    setCurrent([]);
   };
   const move = (event: PointerEvent<SVGSVGElement>) => {
-    if (activePointer.current !== event.pointerId) return;
+    if (activePointer.current !== event.pointerId || !gesture.current) return;
+    if (Math.hypot(event.clientX - gesture.current.x, event.clientY - gesture.current.y) >= 8) gesture.current.moved = true;
     currentRef.current = [...currentRef.current, position(event)];
-    setCurrent(currentRef.current);
+    if (gesture.current.moved || event.pointerType === 'pen') setCurrent(currentRef.current);
   };
   const finish = (event: PointerEvent<SVGSVGElement>) => {
     if (activePointer.current !== event.pointerId) return;
-    if (currentRef.current.length) {
+    const completed = event.type === 'pointerup';
+    tapReady.current = completed && !!gesture.current && !gesture.current.moved && event.pointerType !== 'pen' && performance.now() - gesture.current.startedAt < 350;
+    if (completed && !tapReady.current && currentRef.current.length) {
       const stroke = currentRef.current;
       setDrawings(previous => ({ ...previous, [index]: [...(previous[index] ?? []), stroke] }));
     }
     activePointer.current = null;
+    gesture.current = null;
     currentRef.current = [];
     setCurrent([]);
   };
@@ -112,7 +120,7 @@ export function WritingPad({ word, active = true }: { word: string; active?: boo
     <div className={`practice-surface ${strokes.length ? 'has-ink' : ''}`}>
       <div ref={target} className="practice-guide" aria-label={`Stroke order for ${character}`} />
       {status === 'error' && <span className="practice-fallback" lang="zh-Hant">{character}</span>}
-      <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="practice-ink" role="img" aria-label={`Draw ${character} here with your finger, pen, or mouse`} onPointerDown={start} onPointerMove={move} onPointerUp={finish} onPointerCancel={finish} onLostPointerCapture={finish}>
+      <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="practice-ink" role="img" aria-label={`Draw ${character} here with your finger, pen, or mouse`} onPointerDown={start} onPointerMove={move} onPointerUp={finish} onPointerCancel={finish} onLostPointerCapture={finish} onClick={event => { event.stopPropagation(); if (tapReady.current) { tapReady.current = false; onTap(); } }}>
         <g stroke="#eaeaea" strokeWidth="0.6" strokeDasharray="3 6"><path d="M150 0 V300 M0 150 H300" /></g>
         {[...strokes, current].filter(stroke => stroke.length).map((stroke, i) => stroke.length === 1 ? <circle key={i} cx={stroke[0].x} cy={stroke[0].y} r="2.6" fill="#252525" /> : <path key={i} d={pathOf(stroke)} fill="none" stroke="#252525" strokeWidth="5.2" strokeLinecap="round" strokeLinejoin="round" />)}
       </svg>
