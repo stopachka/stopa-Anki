@@ -1,0 +1,3738 @@
+[
+  {
+    "id": "pavc-b2-0001",
+    "traditional": "生病",
+    "pinyin": "shēng bìng",
+    "english": "to become ill; to be sick",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0002",
+    "traditional": "病了",
+    "pinyin": "bìng le",
+    "english": "to become ill",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0003",
+    "traditional": "病",
+    "pinyin": "bìng",
+    "english": "ailment; sickness; illness; disease; fall ill; sick; defect",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0004",
+    "traditional": "週末",
+    "pinyin": "zhōu mò",
+    "english": "weekend",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0005",
+    "traditional": "怎麼了",
+    "pinyin": "zěn me le",
+    "english": "What's wrong?",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0006",
+    "traditional": "舒服",
+    "pinyin": "shū fú",
+    "english": "comfortable",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0007",
+    "traditional": "禮拜",
+    "pinyin": "lǐ bài",
+    "english": "week; religious service; worship",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0008",
+    "traditional": "禮拜天",
+    "pinyin": "lǐ bài tiān",
+    "english": "Sunday",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0009",
+    "traditional": "忘",
+    "pinyin": "wàng",
+    "english": "to forget; to overlook; to neglect",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0010",
+    "traditional": "醫生",
+    "pinyin": "yī shēng",
+    "english": "doctor",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0011",
+    "traditional": "醫",
+    "pinyin": "yī",
+    "english": "to cure; to treat; medical; medicine; doctor",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0012",
+    "traditional": "感冒",
+    "pinyin": "gǎn mào",
+    "english": "to catch cold; (common) cold",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0013",
+    "traditional": "沒關係",
+    "pinyin": "méi guān xi",
+    "english": "it doesn't matter",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0014",
+    "traditional": "不必",
+    "pinyin": "bú bì",
+    "english": "need not; does not have to",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0015",
+    "traditional": "藥",
+    "pinyin": "yào",
+    "english": "medicine",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0016",
+    "traditional": "就",
+    "pinyin": "jiù",
+    "english": "at once; then; right away; only; (emphasis); to approach; to move towards; to undertake",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0017",
+    "traditional": "沒事",
+    "pinyin": "méi shì",
+    "english": "never mind; doesn't matter; that's all right",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0018",
+    "traditional": "好了",
+    "pinyin": "hǎo le",
+    "english": "to be well again; to recover",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0019",
+    "traditional": "假",
+    "pinyin": "jià",
+    "english": "vacation",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0020",
+    "traditional": "打算",
+    "pinyin": "dǎ suàn",
+    "english": "to plan; to intend; to calculate; plan; intention; calculation",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0021",
+    "traditional": "打",
+    "pinyin": "dǎ",
+    "english": "beat; strike; break; mix up; build; fight; fetch; make; tie up; issue; shoot; calculate; since; from",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0022",
+    "traditional": "算",
+    "pinyin": "suàn",
+    "english": "to calculate",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0023",
+    "traditional": "鄉下",
+    "pinyin": "xiāng xià",
+    "english": "country (as opposed to town or city); rural",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0024",
+    "traditional": "也許",
+    "pinyin": "yě xǔ",
+    "english": "perhaps; maybe",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0025",
+    "traditional": "許",
+    "pinyin": "xǔ",
+    "english": "to allow; to permit; to praise; (surname)",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0026",
+    "traditional": "可能",
+    "pinyin": "kě néng",
+    "english": "might (happen); possible; probable; possibility; probability",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0027",
+    "traditional": "山",
+    "pinyin": "shān",
+    "english": "mountain; hill",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0028",
+    "traditional": "滑雪",
+    "pinyin": "huá xuě",
+    "english": "to ski",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0029",
+    "traditional": "雪",
+    "pinyin": "xuě",
+    "english": "snow",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0030",
+    "traditional": "下雪",
+    "pinyin": "xià xuě",
+    "english": "to snow",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0031",
+    "traditional": "得",
+    "pinyin": "děi",
+    "english": "to have to; must; ought to; to need to",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0032",
+    "traditional": "特別",
+    "pinyin": "tè bié",
+    "english": "especially; special; particular; unusual",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0033",
+    "traditional": "小心",
+    "pinyin": "xiǎo xīn",
+    "english": "careful",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0034",
+    "traditional": "心",
+    "pinyin": "xīn",
+    "english": "heart; mind",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0035",
+    "traditional": "放心",
+    "pinyin": "fàng xīn",
+    "english": "to set one's mind at rest; to be at ease; to rest",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0036",
+    "traditional": "放",
+    "pinyin": "fàng",
+    "english": "to release; to free; to put",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0037",
+    "traditional": "放假",
+    "pinyin": "fàng jià",
+    "english": "to have a holiday or vacation",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0038",
+    "traditional": "壞了",
+    "pinyin": "huài le",
+    "english": "to be broken, ruined, out of order, spoiled",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0039",
+    "traditional": "壞",
+    "pinyin": "huài",
+    "english": "bad",
+    "book": 2,
+    "chapter": 1
+  },
+  {
+    "id": "pavc-b2-0040",
+    "traditional": "郵局",
+    "pinyin": "yóu jú",
+    "english": "post office",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0041",
+    "traditional": "往",
+    "pinyin": "wǎng",
+    "english": "to go (in a direction); past; previous; towards",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0042",
+    "traditional": "一直",
+    "pinyin": "yì zhí",
+    "english": "continuously; always; from the beginning of ... up to ...; all along",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0043",
+    "traditional": "直",
+    "pinyin": "zhí",
+    "english": "straight; vertical; frank; directly; straightly; upright",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0044",
+    "traditional": "第",
+    "pinyin": "dì",
+    "english": "(prefix before a number, for ordering numbers, e.g. \"first\", \"number two\", etc)",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0045",
+    "traditional": "十字路口",
+    "pinyin": "shí zì lù kǒu",
+    "english": "intersection",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0046",
+    "traditional": "路口",
+    "pinyin": "lù kǒu",
+    "english": "street entrance; crossing; intersection (of roads)",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0047",
+    "traditional": "右",
+    "pinyin": "yòu",
+    "english": "right (-hand)",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0048",
+    "traditional": "轉",
+    "pinyin": "zhuǎn",
+    "english": "to turn; to shift; to convey; to forward (mail); to transfer",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0049",
+    "traditional": "經過",
+    "pinyin": "jīng guò",
+    "english": "to pass; to go through; process; course",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0050",
+    "traditional": "百貨公司",
+    "pinyin": "bǎi huò gōng sī",
+    "english": "department store",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0051",
+    "traditional": "再",
+    "pinyin": "zài",
+    "english": "then",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0052",
+    "traditional": "要是",
+    "pinyin": "yào shì",
+    "english": "if",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0053",
+    "traditional": "幫",
+    "pinyin": "bāng",
+    "english": "to assist; to support; to help; group; gang; party",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0054",
+    "traditional": "幫忙",
+    "pinyin": "bāng máng",
+    "english": "help; give (lend) a hand; do a favor; do a good turn",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0055",
+    "traditional": "城市",
+    "pinyin": "chéng shì",
+    "english": "city; town",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0056",
+    "traditional": "城",
+    "pinyin": "chéng",
+    "english": "city walls; city; town",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0057",
+    "traditional": "市",
+    "pinyin": "shì",
+    "english": "market; city",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0058",
+    "traditional": "西部",
+    "pinyin": "xī bù",
+    "english": "western part",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0059",
+    "traditional": "西",
+    "pinyin": "xī",
+    "english": "west",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0060",
+    "traditional": "部",
+    "pinyin": "bù",
+    "english": "part; area; department",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0061",
+    "traditional": "東部",
+    "pinyin": "dōng bù",
+    "english": "the east; the eastern part",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0062",
+    "traditional": "東",
+    "pinyin": "dōng",
+    "english": "east",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0063",
+    "traditional": "台北",
+    "pinyin": "Tái běi",
+    "english": "Taipei (capital of Taiwan)",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0064",
+    "traditional": "臺北",
+    "pinyin": "tái běi",
+    "english": "Taipei",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0065",
+    "traditional": "北",
+    "pinyin": "běi",
+    "english": "north",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0066",
+    "traditional": "然後",
+    "pinyin": "rán hòu",
+    "english": "after; then (afterwards); after that; afterwards",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0067",
+    "traditional": "先",
+    "pinyin": "xiān",
+    "english": "early; prior; former; in advance; first",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0068",
+    "traditional": "離開",
+    "pinyin": "lí kāi",
+    "english": "to depart; to leave",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0069",
+    "traditional": "起飛",
+    "pinyin": "qǐ fēi",
+    "english": "to take off (in an airplane)",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0070",
+    "traditional": "不客氣",
+    "pinyin": "bú kè qì",
+    "english": "you're welcome; impolite; rude; blunt; don't mention it",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0071",
+    "traditional": "客氣",
+    "pinyin": "kè qì",
+    "english": "polite",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0072",
+    "traditional": "南",
+    "pinyin": "nán",
+    "english": "south",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0073",
+    "traditional": "海",
+    "pinyin": "hǎi",
+    "english": "ocean; sea",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0074",
+    "traditional": "高",
+    "pinyin": "gāo",
+    "english": "high; tall",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0075",
+    "traditional": "河",
+    "pinyin": "hé",
+    "english": "river",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0076",
+    "traditional": "條",
+    "pinyin": "tiáo",
+    "english": "measure word for long, thin things (i.e. ribbon, river, etc.); a strip; item; article",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0077",
+    "traditional": "街",
+    "pinyin": "jiē",
+    "english": "street",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0078",
+    "traditional": "吧",
+    "pinyin": "ba",
+    "english": "(modal particle indicating polite suggestion); ...right?; ...OK?",
+    "book": 2,
+    "chapter": 2
+  },
+  {
+    "id": "pavc-b2-0079",
+    "traditional": "給",
+    "pinyin": "gěi",
+    "english": "to; for; for the benefit of; to give; to allow; to do sth (for sb); (passive particle)",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0080",
+    "traditional": "介紹",
+    "pinyin": "jiè shào",
+    "english": "to present; introduction; to introduce",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0081",
+    "traditional": "謝",
+    "pinyin": "xiè",
+    "english": "a surname",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0082",
+    "traditional": "錢",
+    "pinyin": "qián",
+    "english": "a surname",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0083",
+    "traditional": "點菜",
+    "pinyin": "diǎn cài",
+    "english": "to order food",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0084",
+    "traditional": "魚",
+    "pinyin": "yú",
+    "english": "fish",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0085",
+    "traditional": "非常",
+    "pinyin": "fēi cháng",
+    "english": "unusual; extraordinary; extreme; very; exceptional",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0086",
+    "traditional": "對",
+    "pinyin": "duì",
+    "english": "to, toward, for",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0087",
+    "traditional": "牛肉",
+    "pinyin": "niú ròu",
+    "english": "beef",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0088",
+    "traditional": "牛",
+    "pinyin": "niú",
+    "english": "ox; cow; bull",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0089",
+    "traditional": "肉",
+    "pinyin": "ròu",
+    "english": "meat; flesh",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0090",
+    "traditional": "青菜",
+    "pinyin": "qīng cài",
+    "english": "green vegetables; Chinese cabbage",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0091",
+    "traditional": "雞",
+    "pinyin": "jī",
+    "english": "fowl; chicken",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0092",
+    "traditional": "湯",
+    "pinyin": "tāng",
+    "english": "soup",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0093",
+    "traditional": "信",
+    "pinyin": "xìn",
+    "english": "letter; true; to believe; sign; evidence",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0094",
+    "traditional": "替",
+    "pinyin": "tì",
+    "english": "to substitute for; to take the place of; to replace; for; on behalf of; to stand in for",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0095",
+    "traditional": "問好",
+    "pinyin": "wèn hǎo",
+    "english": "say hello to; send one's regards to",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0096",
+    "traditional": "方",
+    "pinyin": "fāng",
+    "english": "a surname",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0097",
+    "traditional": "這麼",
+    "pinyin": "zhè me",
+    "english": "so much; this much; this way; like this",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0098",
+    "traditional": "那麼",
+    "pinyin": "nà me",
+    "english": "like that; in that way; or so; so; so very much; about; in that case",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0099",
+    "traditional": "自己",
+    "pinyin": "zì jǐ",
+    "english": "self; (reflexive pronoun); own",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0100",
+    "traditional": "哪裡",
+    "pinyin": "nǎ lǐ",
+    "english": "an expression of modest denial \"No, no\"",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0101",
+    "traditional": "碗",
+    "pinyin": "wǎn",
+    "english": "bowl; cup; (measure word for servings of food)",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0102",
+    "traditional": "飽",
+    "pinyin": "bǎo",
+    "english": "to eat till full; satisfied",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0103",
+    "traditional": "大家",
+    "pinyin": "dà jiā",
+    "english": "authority; everyone",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0104",
+    "traditional": "慢用",
+    "pinyin": "màn yòng",
+    "english": "eat slowly (enjoy your meal)",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0105",
+    "traditional": "用",
+    "pinyin": "yòng",
+    "english": "to use",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0106",
+    "traditional": "有用",
+    "pinyin": "yǒu yòng",
+    "english": "useful",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0107",
+    "traditional": "水果",
+    "pinyin": "shuǐ guǒ",
+    "english": "fruit",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0108",
+    "traditional": "筷子",
+    "pinyin": "kuài zi",
+    "english": "chopsticks",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0109",
+    "traditional": "刀叉",
+    "pinyin": "dāo chā",
+    "english": "knife and fork",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0110",
+    "traditional": "刀",
+    "pinyin": "dāo",
+    "english": "knife",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0111",
+    "traditional": "刀子",
+    "pinyin": "dāo zi",
+    "english": "knife",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0112",
+    "traditional": "叉",
+    "pinyin": "chā",
+    "english": "fork; pitchfork; prong; pick; cross; intersect",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0113",
+    "traditional": "叉子",
+    "pinyin": "chā zi",
+    "english": "fork",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0114",
+    "traditional": "湯匙",
+    "pinyin": "tāng chí",
+    "english": "soup spoon",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0115",
+    "traditional": "句",
+    "pinyin": "jù",
+    "english": "(a measure word, for sentences or lines of verse); sentence",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0116",
+    "traditional": "句子",
+    "pinyin": "jù zi",
+    "english": "sentence",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0117",
+    "traditional": "封",
+    "pinyin": "fēng",
+    "english": "(a measure word for letters); to confer; to grant; to seal",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0118",
+    "traditional": "毛筆",
+    "pinyin": "máo bǐ",
+    "english": "writing brush",
+    "book": 2,
+    "chapter": 3
+  },
+  {
+    "id": "pavc-b2-0119",
+    "traditional": "以後",
+    "pinyin": "yǐ hòu",
+    "english": "after; later; afterwards; following; later on; in the future",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0120",
+    "traditional": "打電話",
+    "pinyin": "dǎ diàn huà",
+    "english": "to make a telephone call",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0121",
+    "traditional": "電話",
+    "pinyin": "diàn huà",
+    "english": "telephone; phone call",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0122",
+    "traditional": "喂",
+    "pinyin": "wéi",
+    "english": "(interjection) hello; hey; telephone greeting",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0123",
+    "traditional": "以前",
+    "pinyin": "yǐ qián",
+    "english": "before; formerly; previous",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0124",
+    "traditional": "大概",
+    "pinyin": "dà gài",
+    "english": "roughly; probably; rough; approximate; about",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0125",
+    "traditional": "麻煩",
+    "pinyin": "má fán",
+    "english": "trouble; troublesome; to be annoyed; to bother",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0126",
+    "traditional": "煩",
+    "pinyin": "fán",
+    "english": "feel vexed; to bother",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0127",
+    "traditional": "告訴",
+    "pinyin": "gào sù",
+    "english": "to tell; to inform; to let know",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0128",
+    "traditional": "過",
+    "pinyin": "guò",
+    "english": "(experienced action marker)",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0129",
+    "traditional": "記得",
+    "pinyin": "jì dé",
+    "english": "to remember",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0130",
+    "traditional": "記",
+    "pinyin": "jì",
+    "english": "to remember; to note; mark; sign; to record",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0131",
+    "traditional": "中學",
+    "pinyin": "zhōng xué",
+    "english": "middle school",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0132",
+    "traditional": "又",
+    "pinyin": "yòu",
+    "english": "(once) again; also; both... and...; again",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0133",
+    "traditional": "認識",
+    "pinyin": "rèn shì",
+    "english": "be acquainted with (a person); to know; to be familiar with; to recognize",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0134",
+    "traditional": "認得",
+    "pinyin": "rèn dé",
+    "english": "know; recognize",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0135",
+    "traditional": "次",
+    "pinyin": "cì",
+    "english": "nth; number (of times); order; sequence; next; second(ary); (measure word)",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0136",
+    "traditional": "本來",
+    "pinyin": "běn lái",
+    "english": "original; originally; at first; it goes without saying; of course",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0137",
+    "traditional": "後來",
+    "pinyin": "hòu lái",
+    "english": "afterwards; later",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0138",
+    "traditional": "恐怕",
+    "pinyin": "kǒng pà",
+    "english": "(I'm) afraid (that); perhaps; I think",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0139",
+    "traditional": "怕",
+    "pinyin": "pà",
+    "english": "to be afraid; to fear",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0140",
+    "traditional": "決定",
+    "pinyin": "jué dìng",
+    "english": "to decide (to do something); to determine; to resolve",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0141",
+    "traditional": "接",
+    "pinyin": "jiē",
+    "english": "to receive; to come into contact with; to extend; to connect; to join",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0142",
+    "traditional": "見面",
+    "pinyin": "jiàn miàn",
+    "english": "meet; see (someone)",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0143",
+    "traditional": "留",
+    "pinyin": "liú",
+    "english": "leave (message); to retain; to stay; to remain; to keep; to preserve",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0144",
+    "traditional": "字條",
+    "pinyin": "zì tiáo",
+    "english": "a note",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0145",
+    "traditional": "號碼",
+    "pinyin": "hào mǎ",
+    "english": "number",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0146",
+    "traditional": "從前",
+    "pinyin": "cóng qián",
+    "english": "previously; formerly",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0147",
+    "traditional": "洗",
+    "pinyin": "xǐ",
+    "english": "to wash; to bathe",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0148",
+    "traditional": "手",
+    "pinyin": "shǒu",
+    "english": "hand; convenient",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0149",
+    "traditional": "高興",
+    "pinyin": "gāo xìng",
+    "english": "happy; glad; willing (to do sth); in a cheerful mood",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0150",
+    "traditional": "頭",
+    "pinyin": "tóu",
+    "english": "head; first, the top",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0151",
+    "traditional": "義大利",
+    "pinyin": "yì dà lì",
+    "english": "Italy; italian",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0152",
+    "traditional": "郵差",
+    "pinyin": "yóu chāi",
+    "english": "postman",
+    "book": 2,
+    "chapter": 4
+  },
+  {
+    "id": "pavc-b2-0153",
+    "traditional": "華語",
+    "pinyin": "huá yǔ",
+    "english": "Chinese language",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0154",
+    "traditional": "語",
+    "pinyin": "yǔ",
+    "english": "dialect; language; speech",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0155",
+    "traditional": "法語",
+    "pinyin": "fǎ yǔ",
+    "english": "French (language)",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0156",
+    "traditional": "一樣",
+    "pinyin": "yí yàng",
+    "english": "same; like; equal to; the same as; just like",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0157",
+    "traditional": "樣",
+    "pinyin": "yàng",
+    "english": "manner; pattern; way; appearance; shape",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0158",
+    "traditional": "樣子",
+    "pinyin": "yàng zi",
+    "english": "manner; air; looks; aspect",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0159",
+    "traditional": "世界",
+    "pinyin": "shì jiè",
+    "english": "world",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0160",
+    "traditional": "語言",
+    "pinyin": "yǔ yán",
+    "english": "(spoken) language",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0161",
+    "traditional": "語法",
+    "pinyin": "yǔ fǎ",
+    "english": "grammar",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0162",
+    "traditional": "辦法",
+    "pinyin": "bàn fǎ",
+    "english": "means; method; way (to do something)",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0163",
+    "traditional": "比",
+    "pinyin": "bǐ",
+    "english": "(particle used for comparison and \"-er than\"); to compare; to contrast; to gesture (with hands); ratio",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0164",
+    "traditional": "像",
+    "pinyin": "xiàng",
+    "english": "(look) like; similar (to); appearance; to appear; to seem; image; portrait; resemble; seem",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0165",
+    "traditional": "一切",
+    "pinyin": "yí qiè",
+    "english": "all; every; everything",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0166",
+    "traditional": "好像",
+    "pinyin": "hǎo xiàng",
+    "english": "seem; be like",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0167",
+    "traditional": "瘦",
+    "pinyin": "shòu",
+    "english": "tight; thin; lean",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0168",
+    "traditional": "比較",
+    "pinyin": "bǐ jiào",
+    "english": "compare; contrast; fairly; comparatively; relatively; quite; rather",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0169",
+    "traditional": "歲",
+    "pinyin": "suì",
+    "english": "year; years old; (a measure word)",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0170",
+    "traditional": "日子",
+    "pinyin": "rì zi",
+    "english": "a (calendar) date; days of (someone's) life; day; date",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0171",
+    "traditional": "功課",
+    "pinyin": "gōng kè",
+    "english": "classwork",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0172",
+    "traditional": "聰明",
+    "pinyin": "cōng míng",
+    "english": "intelligent; bright",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0173",
+    "traditional": "用功",
+    "pinyin": "yòng gōng",
+    "english": "diligent; industrious (in one's studies)",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0174",
+    "traditional": "不得了",
+    "pinyin": "bù dé liǎo",
+    "english": "desperately serious; disastrous; extremely; exceedingly",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0175",
+    "traditional": "極了",
+    "pinyin": "jí le",
+    "english": "extremely; exceedingly",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0176",
+    "traditional": "胖",
+    "pinyin": "pàng",
+    "english": "fat; plump",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0177",
+    "traditional": "長",
+    "pinyin": "cháng",
+    "english": "length; long; forever; always; constantly",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0178",
+    "traditional": "矮",
+    "pinyin": "ǎi",
+    "english": "short (not tall)",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0179",
+    "traditional": "多麼",
+    "pinyin": "duō me",
+    "english": "how (wonderful, etc); what (a great idea, etc); however (difficult it may be, etc)",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0180",
+    "traditional": "里",
+    "pinyin": "lǐ",
+    "english": "Chinese mile; neighborhood; hometown",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0181",
+    "traditional": "英里",
+    "pinyin": "yīng lǐ",
+    "english": "mile",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0182",
+    "traditional": "公尺",
+    "pinyin": "gōng chǐ",
+    "english": "meter",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0183",
+    "traditional": "尺",
+    "pinyin": "chǐ",
+    "english": "a Chinese foot (M); one-third of a meter; a ruler; a note musical note on traditional Chinese scale",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0184",
+    "traditional": "英尺",
+    "pinyin": "yīng chǐ",
+    "english": "(English) foot (unit of measurement)",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0185",
+    "traditional": "重",
+    "pinyin": "zhòng",
+    "english": "heavy; serious",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0186",
+    "traditional": "公斤",
+    "pinyin": "gōng jīn",
+    "english": "kilogram",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0187",
+    "traditional": "笨",
+    "pinyin": "bèn",
+    "english": "stupid; foolish; silly; slow-witted; clumsy",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0188",
+    "traditional": "短",
+    "pinyin": "duǎn",
+    "english": "lack; short",
+    "book": 2,
+    "chapter": 5
+  },
+  {
+    "id": "pavc-b2-0189",
+    "traditional": "歡迎",
+    "pinyin": "huān yíng",
+    "english": "to welcome; welcome",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0190",
+    "traditional": "搬",
+    "pinyin": "bān",
+    "english": "remove; transport; move; shift",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0191",
+    "traditional": "搬家",
+    "pinyin": "bān jiā",
+    "english": "move (house)",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0192",
+    "traditional": "林",
+    "pinyin": "lín",
+    "english": "(a common Chinese surname)",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0193",
+    "traditional": "陳",
+    "pinyin": "chén",
+    "english": "(a common Chinese surname)",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0194",
+    "traditional": "出去",
+    "pinyin": "chū qù",
+    "english": "(v) go out",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0195",
+    "traditional": "出",
+    "pinyin": "chū",
+    "english": "to go out; to come out; to occur; to produce; to go beyond; to rise; to put forth; to occur; to happen; (a measure word for dramas, plays, or operas)",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0196",
+    "traditional": "出來",
+    "pinyin": "chū lái",
+    "english": "to come out; to emerge",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0197",
+    "traditional": "超級市場",
+    "pinyin": "chāo jí shì chǎng",
+    "english": "supermarket",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0198",
+    "traditional": "市場",
+    "pinyin": "shì chǎng",
+    "english": "market",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0199",
+    "traditional": "場",
+    "pinyin": "chǎng",
+    "english": "a courtyard; open space; place; field; a measure word; (a measure word, used for sport or recreation)",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0200",
+    "traditional": "機場",
+    "pinyin": "jī chǎng",
+    "english": "airport",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0201",
+    "traditional": "送",
+    "pinyin": "sòng",
+    "english": "to escort; to deliver; to send off; to present",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0202",
+    "traditional": "平常",
+    "pinyin": "píng cháng",
+    "english": "ordinary; common; usually; ordinarily",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0203",
+    "traditional": "平",
+    "pinyin": "píng",
+    "english": "flat; level; equal; to make the same score; to tie; to draw; calm; peaceful",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0204",
+    "traditional": "有空",
+    "pinyin": "yǒu kòng",
+    "english": "to have free time; to be free",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0205",
+    "traditional": "空",
+    "pinyin": "kòng",
+    "english": "free time",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0206",
+    "traditional": "空",
+    "pinyin": "kōng",
+    "english": "air; sky; empty; in vain",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0207",
+    "traditional": "需要",
+    "pinyin": "xū yào",
+    "english": "to need; to want; to demand; needs; to require",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0208",
+    "traditional": "改天",
+    "pinyin": "gǎi tiān",
+    "english": "another day",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0209",
+    "traditional": "改",
+    "pinyin": "gǎi",
+    "english": "to change; to alter; to transform; to correct",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0210",
+    "traditional": "談",
+    "pinyin": "tán",
+    "english": "to speak; to talk; to converse; to chat; to discuss; (surname)",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0211",
+    "traditional": "談話",
+    "pinyin": "tán huà",
+    "english": "talk; conversation",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0212",
+    "traditional": "郊區",
+    "pinyin": "jiāo qū",
+    "english": "suburban district; outskirts; suburbs",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0213",
+    "traditional": "區",
+    "pinyin": "qū",
+    "english": "area; region; district; small; distinguish",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0214",
+    "traditional": "市區",
+    "pinyin": "shì qū",
+    "english": "(n) urban district; downtown; city center",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0215",
+    "traditional": "地址",
+    "pinyin": "dì zhǐ",
+    "english": "address",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0216",
+    "traditional": "拿",
+    "pinyin": "ná",
+    "english": "to hold; to seize; to catch; to apprehend; to take",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0217",
+    "traditional": "進來",
+    "pinyin": "jìn lái",
+    "english": "(v) come in",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0218",
+    "traditional": "進",
+    "pinyin": "jìn",
+    "english": "advance; enter; to come in",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0219",
+    "traditional": "進去",
+    "pinyin": "jìn qù",
+    "english": "(v) go in",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0220",
+    "traditional": "請進",
+    "pinyin": "qǐng jìn",
+    "english": "please come in",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0221",
+    "traditional": "盤子",
+    "pinyin": "pán zi",
+    "english": "tray",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0222",
+    "traditional": "盤",
+    "pinyin": "pán",
+    "english": "(measure word for tray of, plate of, dish of)",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0223",
+    "traditional": "寄",
+    "pinyin": "jì",
+    "english": "lodge at; to mail; to send; to entrust; to depend",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0224",
+    "traditional": "跑",
+    "pinyin": "pǎo",
+    "english": "to run; to escape",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0225",
+    "traditional": "出門",
+    "pinyin": "chū mén",
+    "english": "be away from home; go on a journey",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0226",
+    "traditional": "頁",
+    "pinyin": "yè",
+    "english": "page; leaf (measure word for pages)",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0227",
+    "traditional": "行",
+    "pinyin": "háng",
+    "english": "a row; (measure word for lines); profession; professional",
+    "book": 2,
+    "chapter": 6
+  },
+  {
+    "id": "pavc-b2-0228",
+    "traditional": "把",
+    "pinyin": "bǎ",
+    "english": "(a measure word); (marker for direct-object); to hold; to contain; to grasp; to take hold of",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0229",
+    "traditional": "掛",
+    "pinyin": "guà",
+    "english": "to hang; to put up; to suspend",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0230",
+    "traditional": "當中",
+    "pinyin": "dāng zhōng",
+    "english": "among; in the middle; in the center",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0231",
+    "traditional": "最好",
+    "pinyin": "zuì hǎo",
+    "english": "best; (you) had better (do what we suggest)",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0232",
+    "traditional": "窗戶",
+    "pinyin": "chuāng hù",
+    "english": "window",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0233",
+    "traditional": "亮",
+    "pinyin": "liàng",
+    "english": "light; bright",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0234",
+    "traditional": "錄影機",
+    "pinyin": "lù yǐng jī",
+    "english": "video camera",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0235",
+    "traditional": "錄",
+    "pinyin": "lù",
+    "english": "to record; to hit; to copy",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0236",
+    "traditional": "對面",
+    "pinyin": "duì miàn",
+    "english": "opposite",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0237",
+    "traditional": "它",
+    "pinyin": "tā",
+    "english": "it",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0238",
+    "traditional": "臥房",
+    "pinyin": "wò fáng",
+    "english": "bedroom",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0239",
+    "traditional": "檯燈",
+    "pinyin": "tái dēng",
+    "english": "desk lamp; table lamp",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0240",
+    "traditional": "燈",
+    "pinyin": "dēng",
+    "english": "lamp; light",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0241",
+    "traditional": "帶",
+    "pinyin": "dài",
+    "english": "to bring",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0242",
+    "traditional": "廚房",
+    "pinyin": "chú fáng",
+    "english": "kitchen",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0243",
+    "traditional": "碗櫃",
+    "pinyin": "wǎn guì",
+    "english": "cupboard",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0244",
+    "traditional": "櫃",
+    "pinyin": "guì",
+    "english": "cupboard; cabinet; wardrobe",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0245",
+    "traditional": "衣櫃",
+    "pinyin": "yī guì",
+    "english": "wardrobe; armoire",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0246",
+    "traditional": "櫃子",
+    "pinyin": "guì zi",
+    "english": "cupboard; cabinet",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0247",
+    "traditional": "書架",
+    "pinyin": "shū jià",
+    "english": "bookshelf",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0248",
+    "traditional": "架",
+    "pinyin": "jià",
+    "english": "(measure word for airplane, machine)",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0249",
+    "traditional": "架子",
+    "pinyin": "jià zi",
+    "english": "shelf; frame; stand; skeleton",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0250",
+    "traditional": "黑",
+    "pinyin": "hēi",
+    "english": "black; dark",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0251",
+    "traditional": "餓",
+    "pinyin": "è",
+    "english": "to be hungry; hungry",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0252",
+    "traditional": "髒",
+    "pinyin": "zāng",
+    "english": "dirty; filthy",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0253",
+    "traditional": "鑰匙",
+    "pinyin": "yào shi",
+    "english": "key",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0254",
+    "traditional": "車房",
+    "pinyin": "chē fáng",
+    "english": "garage",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0255",
+    "traditional": "關上",
+    "pinyin": "guān shàng",
+    "english": "to close; to shut; to turn off",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0256",
+    "traditional": "關",
+    "pinyin": "guān",
+    "english": "to close; to turn off",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0257",
+    "traditional": "不用",
+    "pinyin": "bú yòng",
+    "english": "need not",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0258",
+    "traditional": "開開",
+    "pinyin": "kāi kāi",
+    "english": "to turn on; to switch on",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0259",
+    "traditional": "新聞",
+    "pinyin": "xīn wén",
+    "english": "news",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0260",
+    "traditional": "聞",
+    "pinyin": "wén",
+    "english": "hear; sniff at",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0261",
+    "traditional": "同學",
+    "pinyin": "tóng xué",
+    "english": "(fellow) classmate",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0262",
+    "traditional": "當然",
+    "pinyin": "dāng rán",
+    "english": "only natural; as it should be; certainly; of course; without doubt",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0263",
+    "traditional": "宿舍",
+    "pinyin": "sù shè",
+    "english": "dormitory; living quarters; hostel",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0264",
+    "traditional": "脫下來",
+    "pinyin": "tuō xià lái",
+    "english": "to take off",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0265",
+    "traditional": "脫",
+    "pinyin": "tuō",
+    "english": "to shed; to take off; to escape; to get away from",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0266",
+    "traditional": "扔",
+    "pinyin": "rēng",
+    "english": "throw; toss; cast",
+    "book": 2,
+    "chapter": 7
+  },
+  {
+    "id": "pavc-b2-0267",
+    "traditional": "著",
+    "pinyin": "zhe",
+    "english": "(a verbal suffix, indicating the action or the state is continuing)",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0268",
+    "traditional": "好了",
+    "pinyin": "hǎo le",
+    "english": "to be ready",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0269",
+    "traditional": "化妝",
+    "pinyin": "huà zhuāng",
+    "english": "to put on make-up",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0270",
+    "traditional": "換",
+    "pinyin": "huàn",
+    "english": "change; exchange",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0271",
+    "traditional": "黃色",
+    "pinyin": "huáng sè",
+    "english": "yellow; pornographic",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0272",
+    "traditional": "黃",
+    "pinyin": "huáng",
+    "english": "(surname); sulfur; yellow",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0273",
+    "traditional": "色",
+    "pinyin": "sè",
+    "english": "color; look; appearance",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0274",
+    "traditional": "漂亮",
+    "pinyin": "piào liàng",
+    "english": "pretty; beautiful",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0275",
+    "traditional": "雙",
+    "pinyin": "shuāng",
+    "english": "two; double; pair; both",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0276",
+    "traditional": "白",
+    "pinyin": "bái",
+    "english": "white; snowy; empty; blank; bright; clear; plain; pure; gratuitous",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0277",
+    "traditional": "皮鞋",
+    "pinyin": "pí xié",
+    "english": "(n) leather shoes",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0278",
+    "traditional": "皮",
+    "pinyin": "pí",
+    "english": "leather; skin; fur",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0279",
+    "traditional": "皮子",
+    "pinyin": "pí zi",
+    "english": "leather",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0280",
+    "traditional": "鞋",
+    "pinyin": "xié",
+    "english": "shoe",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0281",
+    "traditional": "鞋子",
+    "pinyin": "xié zi",
+    "english": "shoe",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0282",
+    "traditional": "涼",
+    "pinyin": "liáng",
+    "english": "cool; cold",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0283",
+    "traditional": "涼快",
+    "pinyin": "liáng kuài",
+    "english": "nice and cold; pleasantly cool",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0284",
+    "traditional": "外套",
+    "pinyin": "wài tào",
+    "english": "coat",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0285",
+    "traditional": "套",
+    "pinyin": "tào",
+    "english": "(a measure word, a set of something, clothes, books, furniture)",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0286",
+    "traditional": "總是",
+    "pinyin": "zǒng shì",
+    "english": "always",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0287",
+    "traditional": "藍",
+    "pinyin": "lán",
+    "english": "blue",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0288",
+    "traditional": "原來",
+    "pinyin": "yuán lái",
+    "english": "original; former; originally; formerly; at first",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0289",
+    "traditional": "紅",
+    "pinyin": "hóng",
+    "english": "red; revolutionary; bonus; popular",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0290",
+    "traditional": "年級",
+    "pinyin": "nián jí",
+    "english": "grade (in school)",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0291",
+    "traditional": "住校",
+    "pinyin": "zhù xiào",
+    "english": "to live at school",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0292",
+    "traditional": "願意",
+    "pinyin": "yuàn yì",
+    "english": "to wish; to want; ready; willing (to do sth)",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0293",
+    "traditional": "故事",
+    "pinyin": "gù shì",
+    "english": "narrative; story; tale",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0294",
+    "traditional": "介紹信",
+    "pinyin": "jiè shào xìn",
+    "english": "introduction letter",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0295",
+    "traditional": "忽然",
+    "pinyin": "hū rán",
+    "english": "suddenly; all of a sudden",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0296",
+    "traditional": "只好",
+    "pinyin": "zhǐ hǎo",
+    "english": "to have to; to be forced to",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0297",
+    "traditional": "部分",
+    "pinyin": "bù fèn",
+    "english": "part; share; section; piece",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0298",
+    "traditional": "大部分",
+    "pinyin": "dà bù fèn",
+    "english": "(in) large part; (the) greater part; the majority",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0299",
+    "traditional": "綠",
+    "pinyin": "lǜ",
+    "english": "green",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0300",
+    "traditional": "草地",
+    "pinyin": "cǎo dì",
+    "english": "lawn; meadow; sod; turf",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0301",
+    "traditional": "草",
+    "pinyin": "cǎo",
+    "english": "grass",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0302",
+    "traditional": "顏色",
+    "pinyin": "yán sè",
+    "english": "color",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0303",
+    "traditional": "開花",
+    "pinyin": "kāi huā",
+    "english": "to bloom; to blossom",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0304",
+    "traditional": "開",
+    "pinyin": "kāi",
+    "english": "to bloom; to blossom",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0305",
+    "traditional": "花",
+    "pinyin": "huā",
+    "english": "flower; blossom; to spend (money, time); fancy pattern",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0306",
+    "traditional": "黑板",
+    "pinyin": "hēi bǎn",
+    "english": "blackboard",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0307",
+    "traditional": "戴",
+    "pinyin": "dài",
+    "english": "to put on; to respect; to bear; to support; wear (glasses, hat, gloves)",
+    "book": 2,
+    "chapter": 8
+  },
+  {
+    "id": "pavc-b2-0308",
+    "traditional": "盒子",
+    "pinyin": "hé zi",
+    "english": "case; box",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0309",
+    "traditional": "盒",
+    "pinyin": "hé",
+    "english": "(measure word: box of something)",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0310",
+    "traditional": "裝",
+    "pinyin": "zhuāng",
+    "english": "to fill; to load",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0311",
+    "traditional": "準備",
+    "pinyin": "zhǔn bèi",
+    "english": "preparation; prepare",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0312",
+    "traditional": "野餐",
+    "pinyin": "yě cān",
+    "english": "picnic",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0313",
+    "traditional": "餐",
+    "pinyin": "cān",
+    "english": "eat; meal",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0314",
+    "traditional": "西餐",
+    "pinyin": "xī cān",
+    "english": "Western-style food",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0315",
+    "traditional": "炸雞",
+    "pinyin": "zhá jī",
+    "english": "fried chicken",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0316",
+    "traditional": "炸",
+    "pinyin": "zhá",
+    "english": "to deep fry",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0317",
+    "traditional": "紙",
+    "pinyin": "zhǐ",
+    "english": "paper",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0318",
+    "traditional": "袋子",
+    "pinyin": "dài zi",
+    "english": "bag",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0319",
+    "traditional": "袋",
+    "pinyin": "dài",
+    "english": "(measure word: a bag of something)",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0320",
+    "traditional": "口袋",
+    "pinyin": "kǒu dài",
+    "english": "pocket",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0321",
+    "traditional": "烤肉",
+    "pinyin": "kǎo ròu",
+    "english": "barbecue",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0322",
+    "traditional": "烤",
+    "pinyin": "kǎo",
+    "english": "to roast; bake; to broil",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0323",
+    "traditional": "冰箱",
+    "pinyin": "bīng xiāng",
+    "english": "icebox; refrigerator; freezer",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0324",
+    "traditional": "冰",
+    "pinyin": "bīng",
+    "english": "ice; to be frozen",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0325",
+    "traditional": "箱",
+    "pinyin": "xiāng",
+    "english": "box; trunk; chest",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0326",
+    "traditional": "箱子",
+    "pinyin": "xiāng zi",
+    "english": "trunk; box; suitcase",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0327",
+    "traditional": "公園",
+    "pinyin": "gōng yuán",
+    "english": "a public park",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0328",
+    "traditional": "風",
+    "pinyin": "fēng",
+    "english": "wind; news; style; custom; manner",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0329",
+    "traditional": "要不然",
+    "pinyin": "yào bù rán",
+    "english": "otherwise; or else; or",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0330",
+    "traditional": "晚安",
+    "pinyin": "wǎn ān",
+    "english": "Good night!; Good evening!",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0331",
+    "traditional": "片",
+    "pinyin": "piàn",
+    "english": "a slice; piece; flake; thin; slice",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0332",
+    "traditional": "香",
+    "pinyin": "xiāng",
+    "english": "fragrant; incense; (of food) savory; appetizing; sweet; scented; popular",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0333",
+    "traditional": "汽水",
+    "pinyin": "qì shuǐ",
+    "english": "soda; pop",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0334",
+    "traditional": "渴",
+    "pinyin": "kě",
+    "english": "thirsty",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0335",
+    "traditional": "麵包",
+    "pinyin": "miàn bāo",
+    "english": "bread",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0336",
+    "traditional": "麵",
+    "pinyin": "miàn",
+    "english": "flour; noodles",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0337",
+    "traditional": "包",
+    "pinyin": "bāo",
+    "english": "to cover; to wrap; to hold; to include; to take charge of; package; wrapper; container; bag; to hold or embrace; bundle; packet; to contract (to or for)",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0338",
+    "traditional": "罐",
+    "pinyin": "guàn",
+    "english": "can; jar; pot",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0339",
+    "traditional": "罐子",
+    "pinyin": "guàn zi",
+    "english": "jar; canister; tin",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0340",
+    "traditional": "日記",
+    "pinyin": "rì jì",
+    "english": "diary",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0341",
+    "traditional": "開始",
+    "pinyin": "kāi shǐ",
+    "english": "begin; beginning; start; initial",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0342",
+    "traditional": "糖",
+    "pinyin": "táng",
+    "english": "sugar; sweets; candy",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0343",
+    "traditional": "大人",
+    "pinyin": "dà rén",
+    "english": "adult; grownup",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0344",
+    "traditional": "聲音",
+    "pinyin": "shēng yīn",
+    "english": "voice; sound",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0345",
+    "traditional": "怎麼",
+    "pinyin": "zěn me",
+    "english": "how?; what?; why?",
+    "book": 2,
+    "chapter": 9
+  },
+  {
+    "id": "pavc-b2-0346",
+    "traditional": "了",
+    "pinyin": "liǎo",
+    "english": "to know; to understand; to know",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0347",
+    "traditional": "臉色",
+    "pinyin": "liǎn sè",
+    "english": "complexion; look",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0348",
+    "traditional": "臉",
+    "pinyin": "liǎn",
+    "english": "face",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0349",
+    "traditional": "疼",
+    "pinyin": "téng",
+    "english": "(it) hurts; love fondly; ache; pain; sore",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0350",
+    "traditional": "躺",
+    "pinyin": "tǎng",
+    "english": "to recline; to lie down",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0351",
+    "traditional": "著",
+    "pinyin": "zháo",
+    "english": "part. indicates the successful result of a verb; to touch; to come in contact with; to feel; to be affected by; to catch fire; to fall asleep; to burn",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0352",
+    "traditional": "白天",
+    "pinyin": "bái tiān",
+    "english": "daytime; during the day; day",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0353",
+    "traditional": "緊張",
+    "pinyin": "jǐn zhāng",
+    "english": "nervous; intense; strained; tense; critical; tension",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0354",
+    "traditional": "緊",
+    "pinyin": "jǐn",
+    "english": "tight; nervous; strict",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0355",
+    "traditional": "再說",
+    "pinyin": "zài shuō",
+    "english": "what's more; besides; let's talk about it later;",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0356",
+    "traditional": "運動",
+    "pinyin": "yùn dòng",
+    "english": "movement; campaign; sports",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0357",
+    "traditional": "動",
+    "pinyin": "dòng",
+    "english": "to move; to be moved",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0358",
+    "traditional": "網球",
+    "pinyin": "wǎng qiú",
+    "english": "tennis",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0359",
+    "traditional": "完",
+    "pinyin": "wán",
+    "english": "to finish; to be over; whole; complete; entire",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0360",
+    "traditional": "後天",
+    "pinyin": "hòu tiān",
+    "english": "day after tomorrow; post-natal",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0361",
+    "traditional": "空氣",
+    "pinyin": "kōng qì",
+    "english": "air; atmosphere",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0362",
+    "traditional": "乾淨",
+    "pinyin": "gān jìng",
+    "english": "clean; neat",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0363",
+    "traditional": "練習",
+    "pinyin": "liàn xí",
+    "english": "exercise; drill",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0364",
+    "traditional": "慢跑",
+    "pinyin": "màn pǎo",
+    "english": "jogging; to jog",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0365",
+    "traditional": "或是",
+    "pinyin": "huò shì",
+    "english": "(conj) either X or Y",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0366",
+    "traditional": "籃球",
+    "pinyin": "lán qiú",
+    "english": "basketball",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0367",
+    "traditional": "游泳",
+    "pinyin": "yóu yǒng",
+    "english": "swim",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0368",
+    "traditional": "游",
+    "pinyin": "yóu",
+    "english": "to walk; to tour; to roam; to swim; to travel",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0369",
+    "traditional": "身體",
+    "pinyin": "shēn tǐ",
+    "english": "(human) body; health",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0370",
+    "traditional": "清楚",
+    "pinyin": "qīng chǔ",
+    "english": "clear; clearly understood; distinct",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0371",
+    "traditional": "長",
+    "pinyin": "zhǎng",
+    "english": "chief; head; elder; to grow; to develop",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0372",
+    "traditional": "瓶",
+    "pinyin": "píng",
+    "english": "bottle; (a measure word); vase; pitcher",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0373",
+    "traditional": "瓶子",
+    "pinyin": "píng zi",
+    "english": "bottle",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0374",
+    "traditional": "打球",
+    "pinyin": "dǎ qiú",
+    "english": "to play or hit a ball; to play ball games",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0375",
+    "traditional": "球",
+    "pinyin": "qiú",
+    "english": "ball",
+    "book": 2,
+    "chapter": 10
+  },
+  {
+    "id": "pavc-b2-0376",
+    "traditional": "好好地",
+    "pinyin": "hǎo hǎo de",
+    "english": "in a proper way; to the best of one's ability; seriously; nicely",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0377",
+    "traditional": "地",
+    "pinyin": "de",
+    "english": "(subor. part. adverbial); -ly",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0378",
+    "traditional": "慶祝",
+    "pinyin": "qìng zhù",
+    "english": "celebrate",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0379",
+    "traditional": "祝",
+    "pinyin": "zhù",
+    "english": "invoke; pray to; wish; to express good wishes",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0380",
+    "traditional": "生日",
+    "pinyin": "shēng rì",
+    "english": "birthday",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0381",
+    "traditional": "開",
+    "pinyin": "kāi",
+    "english": "to hold an event",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0382",
+    "traditional": "舞會",
+    "pinyin": "wǔ huì",
+    "english": "dance; ball; party",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0383",
+    "traditional": "會",
+    "pinyin": "huì",
+    "english": "meeting; party",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0384",
+    "traditional": "開會",
+    "pinyin": "kāi huì",
+    "english": "have a meeting; be at a meeting; to hold or attend a meeting",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0385",
+    "traditional": "茶會",
+    "pinyin": "chá huì",
+    "english": "tea party",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0386",
+    "traditional": "正",
+    "pinyin": "zhèng",
+    "english": "just (right); main; upright; straight; correct; principle",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0387",
+    "traditional": "蛋糕",
+    "pinyin": "dàn gāo",
+    "english": "cake",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0388",
+    "traditional": "蛋",
+    "pinyin": "dàn",
+    "english": "egg; oval shaped",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0389",
+    "traditional": "點心",
+    "pinyin": "diǎn xīn",
+    "english": "light refreshments; pastry",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0390",
+    "traditional": "甜",
+    "pinyin": "tián",
+    "english": "sweet",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0391",
+    "traditional": "鹹",
+    "pinyin": "xián",
+    "english": "salty",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0392",
+    "traditional": "包子",
+    "pinyin": "bāo zi",
+    "english": "steamed stuffed bun",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0393",
+    "traditional": "葡萄",
+    "pinyin": "pú táo",
+    "english": "grape",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0394",
+    "traditional": "西瓜",
+    "pinyin": "xī guā",
+    "english": "watermelon",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0395",
+    "traditional": "橘子",
+    "pinyin": "jú zi",
+    "english": "orange",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0396",
+    "traditional": "酸",
+    "pinyin": "suān",
+    "english": "sour; sore; ache; acid",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0397",
+    "traditional": "飲料",
+    "pinyin": "yǐn liào",
+    "english": "beverage",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0398",
+    "traditional": "味道",
+    "pinyin": "wèi dào",
+    "english": "flavor",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0399",
+    "traditional": "加",
+    "pinyin": "jiā",
+    "english": "to add; plus",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0400",
+    "traditional": "冰塊",
+    "pinyin": "bīng kuài",
+    "english": "ice cube",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0401",
+    "traditional": "前天",
+    "pinyin": "qián tiān",
+    "english": "the day before yesterday",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0402",
+    "traditional": "好玩",
+    "pinyin": "hǎo wán",
+    "english": "to be interesting; to be full of fun",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0403",
+    "traditional": "參加",
+    "pinyin": "cān jiā",
+    "english": "to participate; to take part; to join",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0404",
+    "traditional": "圓",
+    "pinyin": "yuán",
+    "english": "circle; round; circular; spherical; (of the moon) full; unit of Chinese currency (Yuan); tactful; to justify",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0405",
+    "traditional": "眼睛",
+    "pinyin": "yǎn jīng",
+    "english": "eye",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0406",
+    "traditional": "又",
+    "pinyin": "yòu",
+    "english": "(once) again; also; both... and...; again",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0407",
+    "traditional": "可惜",
+    "pinyin": "kě xī",
+    "english": "it is a pity; what a pity; (it's) too bad",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0408",
+    "traditional": "蘋果",
+    "pinyin": "píng guǒ",
+    "english": "apple",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0409",
+    "traditional": "鼻子",
+    "pinyin": "bí zi",
+    "english": "nose",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0410",
+    "traditional": "嘴",
+    "pinyin": "zuǐ",
+    "english": "mouth",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0411",
+    "traditional": "李子",
+    "pinyin": "lǐ zi",
+    "english": "plum",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0412",
+    "traditional": "笑",
+    "pinyin": "xiào",
+    "english": "laugh; smile",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0413",
+    "traditional": "笑話",
+    "pinyin": "xiào huà",
+    "english": "joke; jest",
+    "book": 2,
+    "chapter": 11
+  },
+  {
+    "id": "pavc-b2-0414",
+    "traditional": "讓",
+    "pinyin": "ràng",
+    "english": "to ask; to let; permit; have (someone do something); to yield; to allow",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0415",
+    "traditional": "弄",
+    "pinyin": "nòng",
+    "english": "(a generalised verb of doing-make, get, fix, etc)",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0416",
+    "traditional": "丟",
+    "pinyin": "diū",
+    "english": "to lose; to put aside; to throw",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0417",
+    "traditional": "出事",
+    "pinyin": "chū shì",
+    "english": "have an accident; meet with a mishap",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0418",
+    "traditional": "摘",
+    "pinyin": "zhāi",
+    "english": "to borrow; to pick (flowers, fruit); to pluck; to take; to select",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0419",
+    "traditional": "洗手間",
+    "pinyin": "xǐ shǒu jiān",
+    "english": "washroom; restroom",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0420",
+    "traditional": "哭",
+    "pinyin": "kū",
+    "english": "to cry; to weep",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0421",
+    "traditional": "書包",
+    "pinyin": "shū bāo",
+    "english": "schoolbag; satchel",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0422",
+    "traditional": "奇怪",
+    "pinyin": "qí guài",
+    "english": "strange; odd",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0423",
+    "traditional": "怪",
+    "pinyin": "guài",
+    "english": "queer; to blame",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0424",
+    "traditional": "糊塗",
+    "pinyin": "hú tú",
+    "english": "to be bewildered, mixed up or confused",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0425",
+    "traditional": "胡塗",
+    "pinyin": "hú tú",
+    "english": "to be bewildered, mixed up or confused",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0426",
+    "traditional": "警察",
+    "pinyin": "jǐng chá",
+    "english": "police; policeman; policewoman",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0427",
+    "traditional": "報警",
+    "pinyin": "bào jǐng",
+    "english": "report (an incident) to the police; give an alarm",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0428",
+    "traditional": "被",
+    "pinyin": "bèi",
+    "english": "by (marker for passive-voice sentences or clauses); quilt; blanket; to cover; to wear",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0429",
+    "traditional": "偷",
+    "pinyin": "tōu",
+    "english": "to steal; to pilfer",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0430",
+    "traditional": "小偷",
+    "pinyin": "xiǎo tōu",
+    "english": "(n) thief",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0431",
+    "traditional": "銀行",
+    "pinyin": "yín háng",
+    "english": "bank",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0432",
+    "traditional": "發現",
+    "pinyin": "fā xiàn",
+    "english": "to find; to discover",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0433",
+    "traditional": "不見了",
+    "pinyin": "bù jiàn le",
+    "english": "disappear; be missing",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0434",
+    "traditional": "重要",
+    "pinyin": "zhòng yào",
+    "english": "important; significant; major",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0435",
+    "traditional": "姓名",
+    "pinyin": "xìng míng",
+    "english": "name and surname",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0436",
+    "traditional": "什麼的",
+    "pinyin": "shén me de",
+    "english": "and so on; and what not",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0437",
+    "traditional": "希望",
+    "pinyin": "xī wàng",
+    "english": "to wish for; to desire; to hope",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0438",
+    "traditional": "消息",
+    "pinyin": "xiāo xi",
+    "english": "news; information",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0439",
+    "traditional": "亂",
+    "pinyin": "luàn",
+    "english": "in confusion; disorderly",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0440",
+    "traditional": "打破",
+    "pinyin": "dǎ pò",
+    "english": "to break; to smash",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0441",
+    "traditional": "破",
+    "pinyin": "pò",
+    "english": "to break; to split; broken; damaged; worn out",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0442",
+    "traditional": "生氣",
+    "pinyin": "shēng qì",
+    "english": "angry; mad; offended; to get angry; to be enraged; to take offense",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0443",
+    "traditional": "搶",
+    "pinyin": "qiǎng",
+    "english": "to grab; to rob; to snatch; fight over; to rush; to scramble",
+    "book": 2,
+    "chapter": 12
+  },
+  {
+    "id": "pavc-b2-0444",
+    "traditional": "恭喜",
+    "pinyin": "gōng xǐ",
+    "english": "congratulations; greetings",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0445",
+    "traditional": "快樂",
+    "pinyin": "kuài lè",
+    "english": "happy; merry",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0446",
+    "traditional": "才",
+    "pinyin": "cái",
+    "english": "just; not until",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0447",
+    "traditional": "禮物",
+    "pinyin": "lǐ wù",
+    "english": "gift; present",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0448",
+    "traditional": "健康",
+    "pinyin": "jiàn kāng",
+    "english": "health",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0449",
+    "traditional": "隨便",
+    "pinyin": "suí biàn",
+    "english": "as one wishes; as one pleases; casual",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0450",
+    "traditional": "院子",
+    "pinyin": "yuàn zi",
+    "english": "courtyard",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0451",
+    "traditional": "熱鬧",
+    "pinyin": "rè nào",
+    "english": "bustling with noise and excitement; lively",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0452",
+    "traditional": "工作",
+    "pinyin": "gōng zuò",
+    "english": "job; work; construction; work; task",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0453",
+    "traditional": "電腦",
+    "pinyin": "diàn nǎo",
+    "english": "computer",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0454",
+    "traditional": "份",
+    "pinyin": "fèn",
+    "english": "(a measure word for gifts, copies of a newspaper); copy (of newspaper, magazine, etc.); share; portion; part; (a measure word)",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0455",
+    "traditional": "越來越",
+    "pinyin": "yuè lái yuè",
+    "english": "more and more",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0456",
+    "traditional": "越越",
+    "pinyin": "yuè yuè",
+    "english": "the more... the more...",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0457",
+    "traditional": "通知",
+    "pinyin": "tōng zhī",
+    "english": "notify; inform; notice; notification",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0458",
+    "traditional": "畢業",
+    "pinyin": "bì yè",
+    "english": "graduation; to graduate; to finish school",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0459",
+    "traditional": "研究所",
+    "pinyin": "yán jiù suǒ",
+    "english": "graduate school; research institute",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0460",
+    "traditional": "研究",
+    "pinyin": "yán jiù",
+    "english": "research",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0461",
+    "traditional": "聊",
+    "pinyin": "liáo",
+    "english": "to chat; to have a chat; to kill time",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0462",
+    "traditional": "隨時",
+    "pinyin": "suí shí",
+    "english": "at any time",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0463",
+    "traditional": "進步",
+    "pinyin": "jìn bù",
+    "english": "progress",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0464",
+    "traditional": "暑假",
+    "pinyin": "shǔ jià",
+    "english": "summer vacation",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0465",
+    "traditional": "打工",
+    "pinyin": "dǎ gōng",
+    "english": "part time job",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0466",
+    "traditional": "寒假",
+    "pinyin": "hán jià",
+    "english": "winter vacation",
+    "book": 2,
+    "chapter": 13
+  },
+  {
+    "id": "pavc-b2-0467",
+    "traditional": "事情",
+    "pinyin": "shì qíng",
+    "english": "affair; matter; thing; business",
+    "book": 2,
+    "chapter": 13
+  }
+]

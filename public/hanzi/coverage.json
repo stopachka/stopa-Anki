@@ -1,0 +1,15 @@
+{
+  "source": "https://github.com/chanind/hanzi-writer-data",
+  "package": "hanzi-writer-data@2.0.1",
+  "license": "Arphic Public License",
+  "originalData": "https://github.com/skishore/makemeahanzi",
+  "supplementary": {
+    "嚐": "https://github.com/parsimonhi/animCJK/blob/c63765b150cbd567c71d05cf4a4f8d00b57045c9/graphicsZhHant.txt"
+  },
+  "vocabularyEntries": 1787,
+  "requiredCharacters": 1043,
+  "availableCharacters": 1043,
+  "missingCharacters": [],
+  "bytes": 3197791,
+  "missingVocabularyEntries": []
+}
