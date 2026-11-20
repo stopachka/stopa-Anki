@@ -102,9 +102,11 @@
 .signout-button{font-size:13px;line-height:1.4;color:#737373;padding:8px 0 8px 10px;min-height:40px}
 .signout-button:hover:not(:disabled){color:#222}
 .signout-error{text-align:right;color:#a33d3d;font-size:12px;line-height:1.5;margin:-8px 0 14px}
-.home-about{text-align:center;margin:23px 0 28px}
+.home-about{display:flex;align-items:center;justify-content:center;gap:4px;margin:23px 0 28px}
 .home-about button{color:#737373;font-size:12px;line-height:1.4;padding:9px 12px}
 .home-about button:hover{color:#333;text-decoration:underline;text-underline-offset:3px}
+.home-about .home-refresh{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%}
+.home-about .home-refresh:hover:not(:disabled){background:#f4f4f4;text-decoration:none}
 .pronunciation-button{width:40px;min-width:40px;padding:0}
 /* Keep study navigation and queue counts quiet; ratings carry their familiar colors. */
 .study-heading{display:grid;grid-template-columns:40px 1fr 40px;gap:8px}

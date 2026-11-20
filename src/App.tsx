@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Check, X } from 'lucide-react';
+import { Check, RefreshCw, X } from 'lucide-react';
 import { State, type Grade } from 'ts-fsrs';
 import type { Book, Word } from './types';
 import { grades, intervalLabel, nextWord, summarizeWords, type Memories, type Scheduler, type WordCounts } from './lib/scheduler';
@@ -158,7 +158,7 @@ export default function App({ books, words, scheduler, user }: AppProps) {
           <StudyCounts counts={bookCounts} />
         </button>;
       })}</div>
-      <div className="home-about"><button onClick={() => setAbout(true)}>About</button></div>
+      <div className="home-about"><button onClick={() => setAbout(true)}>About</button><button className="home-refresh" disabled={saving || signingOut} aria-label="Refresh app" title="Refresh app" onClick={() => window.location.reload()}><RefreshCw size={16} aria-hidden="true" /></button></div>
     </main> : <main className="study-main">
       <div className="study-heading"><button className="books-button" disabled={saving} onClick={closeBook} aria-label="Back to books" title="Back to books"><X size={18} aria-hidden="true" /></button><span className="study-book-title">{selectedBook.title}</span></div>
       <div className="session-progress"><div className="progress-track" role="progressbar" aria-label="Cards started" aria-valuemin={0} aria-valuemax={counts.total} aria-valuenow={counts.started}><span style={{ width: `${counts.total ? (counts.started / counts.total) * 100 : 0}%` }} /></div><span>{counts.started} / {counts.total}</span></div>
