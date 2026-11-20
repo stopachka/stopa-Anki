@@ -1,18 +1,15 @@
-import { DefaultScheduler, Rating, State, type Grade } from 'ts-fsrs';
+import { makeAnkiScheduler } from './anki/scheduler.ts';
+import { Rating, State, type Grade, type MemoryCard, type ReviewLog, type ReviewResult } from './anki/types.ts';
+import { isCardDue, learningAvailable, selectNextWord } from './anki/queue.ts';
 import type { Word } from '../types.ts';
 
-// Pin the model separately from the package version.
-export const makeScheduler = () => DefaultScheduler({
-  version: 'FSRS-6',
-  desiredRetention: 0.9,
-  learningSteps: ['1m', '10m'],
-  relearningSteps: ['1m'],
-  enableFuzz: false,
-});
+export { Rating, State } from './anki/types.ts';
+export type { Grade, MemoryCard, ReviewLog } from './anki/types.ts';
+export { StudyQueue } from './anki/queue.ts';
+
+export const makeScheduler = makeAnkiScheduler;
 
 export type Scheduler = Awaited<ReturnType<typeof makeScheduler>>;
-export type MemoryCard = ReturnType<Scheduler['newCard']>;
-export type ReviewLog = ReturnType<Scheduler['review']>['revlog'];
 export type Memories = Record<string, MemoryCard>;
 
 export interface WordCounts {
@@ -28,8 +25,8 @@ export function summarizeWords(words: Word[], memories: Memories, now: Date, rem
   for (const word of words) {
     const card = memories[word.id];
     if (!card || card.state === State.New) counts.newCount++;
-    else if (card.state === State.Learning || card.state === State.Relearning) counts.learningCount++;
-    else if (card.state === State.Review && card.dueAt <= now) counts.reviewCount++;
+    else if (learningAvailable(card, now)) counts.learningCount++;
+    else if (card.state === State.Review && isCardDue(card, now)) counts.reviewCount++;
   }
   counts.started = counts.total - counts.newCount;
   counts.newCount = Math.min(counts.newCount, Math.max(0, Math.floor(remainingNew)));
@@ -45,9 +42,21 @@ export const grades: { rating: Grade; label: string }[] = [
 
 // Due reviews have priority; unseen vocabulary stays in textbook order.
 export function nextWord(words: Word[], memories: Memories, now: Date, remainingNew = Infinity): Word | undefined {
-  const due = words.filter(word => memories[word.id] && memories[word.id].state !== State.New && memories[word.id].dueAt <= now);
-  due.sort((a, b) => memories[a.id].dueAt.getTime() - memories[b.id].dueAt.getTime());
-  return due[0] ?? (remainingNew > 0 ? words.find(word => !memories[word.id] || memories[word.id].state === State.New) : undefined);
+  return selectNextWord(words, memories, now, remainingNew);
+}
+
+// Answer buttons display the scheduled interval; intraday learning can be
+// brought forward by Anki's learn-ahead queue, and actual due times include fuzz.
+export function answerIntervalLabel(result: ReviewResult): string {
+  if (result.interval.kind === 'seconds') {
+    const seconds = result.interval.value;
+    const value = seconds < 60 ? `${seconds} sec` : seconds < 3600 ? `${Math.round(seconds / 60)} min` : `${Math.round(seconds / 3600)} hr`;
+    return `${seconds < 1200 ? '<' : ''}${value}`;
+  }
+  const days = result.interval.value;
+  if (days < 30) return `${days} ${days === 1 ? 'day' : 'days'}`;
+  if (days < 365) return `${Math.round(days / 30)} mo`;
+  return `${(days / 365).toFixed(1)} yr`;
 }
 
 export function intervalLabel(due: Date, now: Date): string {

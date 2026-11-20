@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { Rating, State } from 'ts-fsrs';
-import { makeScheduler, nextWord, intervalLabel, summarizeWords } from './scheduler.ts';
+import { Rating, State } from './anki/types.ts';
+import { answerIntervalLabel, makeScheduler, nextWord, summarizeWords } from './scheduler.ts';
 import type { Word } from '../types.ts';
 
 const words: Word[] = [1, 2, 3].map(id => ({ id: String(id), traditional: '學', pinyin: 'xué', english: 'learn', book: 1, chapter: 1 }));
@@ -17,17 +17,20 @@ test('a rating updates FSRS state without mutating the source card', async () =>
   assert.equal(good.revlog.rating, Rating.Good);
   assert.ok(again.card.dueAt > now);
   assert.ok(good.card.dueAt > again.card.dueAt);
-  assert.equal(intervalLabel(again.card.dueAt, now), '1 min');
+  assert.equal(answerIntervalLabel(again), '<1 min');
+  assert.equal(answerIntervalLabel(good), '<10 min');
 });
 
-test('due reviews take priority; future reviews are not shown early', async () => {
-  const scheduler = await makeScheduler();
+test('due learning takes priority; learn-ahead waits until the main queue is empty', async () => {
+  const scheduler = await makeScheduler({ enableFuzz: false });
   const card = scheduler.newCard({ cardId: '2', now });
   const rated = scheduler.review({ card, grade: Rating.Again, now }).card;
   const memories = { '2': rated };
   assert.equal(nextWord(words, memories, now)?.id, '1');
   assert.equal(nextWord(words, memories, new Date(now.getTime() + 60_001))?.id, '2');
-  assert.equal(nextWord([words[1]], memories, now), undefined);
+  assert.equal(nextWord([words[1]], memories, now)?.id, '2');
+  const graduated = scheduler.review({ card: rated, grade: Rating.Easy, now }).card;
+  assert.equal(nextWord([words[1]], { '2': graduated }, now), undefined);
 });
 
 test('the active scope controls which deck and chapter can be reviewed', async () => {

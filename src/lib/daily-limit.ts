@@ -1,4 +1,5 @@
-import { State } from 'ts-fsrs';
+import { studyDayBounds } from './anki/time.ts';
+import { State } from './anki/types.ts';
 
 export const DEFAULT_DAILY_NEW_LIMIT = 10;
 
@@ -14,12 +15,9 @@ export function normalizeDailyNewLimit(value: unknown): number {
     : DEFAULT_DAILY_NEW_LIMIT;
 }
 
-// Construct both midnights in local calendar time so DST days may be 23 or 25 hours.
+// Share Anki's 4am study-day rollover with scheduling and queue selection.
 export function dayBounds(now: Date): { start: number; end: number } {
-  const year = now.getFullYear();
-  const month = now.getMonth();
-  const day = now.getDate();
-  return { start: new Date(year, month, day).getTime(), end: new Date(year, month, day + 1).getTime() };
+  return studyDayBounds(now);
 }
 
 export function introducedWordIds(reviews: Iterable<DailyReview>, now: Date): Set<string> {

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { id } from '@instantdb/react';
-import { State } from 'ts-fsrs';
+import { State } from './anki/types.ts';
 import { db } from './db';
 import { deserializeCard, serializeCard, serializeReviewLog } from './card-codec';
 import { mergeProgress, pendingCommittedCards } from './progress-state';

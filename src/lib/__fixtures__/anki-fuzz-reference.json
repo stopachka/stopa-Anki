@@ -1,0 +1,1868 @@
+{
+  "source": {
+    "package": "anki==26.09.4",
+    "commit": "c06370ff4d87cb48d825f90cc83e02b9a4e84ecd",
+    "url": "https://github.com/ankitects/anki/tree/c06370ff4d87cb48d825f90cc83e02b9a4e84ecd",
+    "fuzz": "production StdRng with canonical card IDs",
+    "loadBalancerEnabled": false,
+    "timezone": "UTC",
+    "rolloverHour": 4,
+    "learningStepsMinutes": [
+      1,
+      10
+    ],
+    "relearningStepsMinutes": [
+      1
+    ]
+  },
+  "cases": [
+    {
+      "name": "fuzz-new-1700000000001-reps0",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-new-1700000000001-reps0",
+        "state": 0,
+        "stability": 0,
+        "difficulty": 0,
+        "reps": 0,
+        "lapses": 0,
+        "scheduledDays": 0,
+        "scheduleStatus": "new",
+        "dueAt": "2026-11-20T05:35:26.000Z",
+        "lastReviewAt": null,
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000001
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 0,
+      "currentState": {
+        "normal": {
+          "new": {
+            "position": 1
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 0.212,
+          "difficulty": 6.4133,
+          "remainingSteps": 2,
+          "scheduledSeconds": 60
+        },
+        "2": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 1.2931,
+          "difficulty": 5.1121707,
+          "remainingSteps": 2,
+          "scheduledSeconds": 330
+        },
+        "3": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 2.3065,
+          "difficulty": 2.118104,
+          "remainingSteps": 1,
+          "scheduledSeconds": 600
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 8,
+          "lapses": 0,
+          "stability": 8.2956,
+          "difficulty": 1.0,
+          "easeFactor": 2.5
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "new": {
+              "position": 1
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 60,
+              "memory_state": {
+                "stability": 0.212,
+                "difficulty": 6.4133
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 330,
+              "memory_state": {
+                "stability": 1.2931,
+                "difficulty": 5.1121707
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 1,
+              "scheduled_secs": 600,
+              "memory_state": {
+                "stability": 2.3065,
+                "difficulty": 2.118104
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 8,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 8.2956,
+                "difficulty": 1.0
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      },
+      "appliedLearningSeconds": {
+        "1": 67,
+        "3": 671
+      }
+    },
+    {
+      "name": "fuzz-review-1700000000001-reps0",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-review-1700000000001-reps0",
+        "state": 2,
+        "stability": 30.0,
+        "difficulty": 5.0,
+        "reps": 0,
+        "lapses": 0,
+        "scheduledDays": 30,
+        "scheduleStatus": "review",
+        "dueAt": "2026-11-20T04:00:00.000Z",
+        "lastReviewAt": "2026-10-21T05:35:26.000Z",
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000001
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 30,
+      "currentState": {
+        "normal": {
+          "review": {
+            "scheduled_days": 30,
+            "elapsed_days": 30,
+            "ease_factor": 2.5,
+            "memory_state": {
+              "stability": 30.0,
+              "difficulty": 5.0
+            },
+            "lapses": 0,
+            "leeched": false
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 3,
+          "scheduledDays": 2,
+          "lapses": 1,
+          "stability": 2.3239887,
+          "difficulty": 8.341763,
+          "remainingSteps": 1,
+          "scheduledSeconds": 60,
+          "easeFactor": 2.3
+        },
+        "2": {
+          "state": 2,
+          "scheduledDays": 63,
+          "lapses": 0,
+          "stability": 63.093803,
+          "difficulty": 6.6659956,
+          "easeFactor": 2.35
+        },
+        "3": {
+          "state": 2,
+          "scheduledDays": 85,
+          "lapses": 0,
+          "stability": 85.02794,
+          "difficulty": 4.990228,
+          "easeFactor": 2.5
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 133,
+          "lapses": 0,
+          "stability": 133.06183,
+          "difficulty": 3.3144615,
+          "easeFactor": 2.65
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "review": {
+              "scheduled_days": 30,
+              "elapsed_days": 30,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 30.0,
+                "difficulty": 5.0
+              },
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "relearning": {
+              "review": {
+                "scheduled_days": 2,
+                "ease_factor": 2.3,
+                "lapses": 1,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_days": 0,
+                "leeched": false
+              },
+              "learning": {
+                "remaining_steps": 1,
+                "scheduled_secs": 60,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_secs": 0
+              }
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "review": {
+              "scheduled_days": 63,
+              "ease_factor": 2.35,
+              "memory_state": {
+                "stability": 63.093803,
+                "difficulty": 6.6659956
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "review": {
+              "scheduled_days": 85,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 85.02794,
+                "difficulty": 4.990228
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 133,
+              "ease_factor": 2.65,
+              "memory_state": {
+                "stability": 133.06183,
+                "difficulty": 3.3144615
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "fuzz-new-1700000000001-reps1",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-new-1700000000001-reps1",
+        "state": 0,
+        "stability": 0,
+        "difficulty": 0,
+        "reps": 1,
+        "lapses": 0,
+        "scheduledDays": 0,
+        "scheduleStatus": "new",
+        "dueAt": "2026-11-20T05:35:26.000Z",
+        "lastReviewAt": null,
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000001
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 0,
+      "currentState": {
+        "normal": {
+          "new": {
+            "position": 1
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 0.212,
+          "difficulty": 6.4133,
+          "remainingSteps": 2,
+          "scheduledSeconds": 60
+        },
+        "2": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 1.2931,
+          "difficulty": 5.1121707,
+          "remainingSteps": 2,
+          "scheduledSeconds": 330
+        },
+        "3": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 2.3065,
+          "difficulty": 2.118104,
+          "remainingSteps": 1,
+          "scheduledSeconds": 600
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 8,
+          "lapses": 0,
+          "stability": 8.2956,
+          "difficulty": 1.0,
+          "easeFactor": 2.5
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "new": {
+              "position": 1
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 60,
+              "memory_state": {
+                "stability": 0.212,
+                "difficulty": 6.4133
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 330,
+              "memory_state": {
+                "stability": 1.2931,
+                "difficulty": 5.1121707
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 1,
+              "scheduled_secs": 600,
+              "memory_state": {
+                "stability": 2.3065,
+                "difficulty": 2.118104
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 8,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 8.2956,
+                "difficulty": 1.0
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      },
+      "appliedLearningSeconds": {
+        "1": 68,
+        "3": 688
+      }
+    },
+    {
+      "name": "fuzz-review-1700000000001-reps1",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-review-1700000000001-reps1",
+        "state": 2,
+        "stability": 30.0,
+        "difficulty": 5.0,
+        "reps": 1,
+        "lapses": 0,
+        "scheduledDays": 30,
+        "scheduleStatus": "review",
+        "dueAt": "2026-11-20T04:00:00.000Z",
+        "lastReviewAt": "2026-10-21T05:35:26.000Z",
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000001
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 30,
+      "currentState": {
+        "normal": {
+          "review": {
+            "scheduled_days": 30,
+            "elapsed_days": 30,
+            "ease_factor": 2.5,
+            "memory_state": {
+              "stability": 30.0,
+              "difficulty": 5.0
+            },
+            "lapses": 0,
+            "leeched": false
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 3,
+          "scheduledDays": 2,
+          "lapses": 1,
+          "stability": 2.3239887,
+          "difficulty": 8.341763,
+          "remainingSteps": 1,
+          "scheduledSeconds": 60,
+          "easeFactor": 2.3
+        },
+        "2": {
+          "state": 2,
+          "scheduledDays": 64,
+          "lapses": 0,
+          "stability": 63.093803,
+          "difficulty": 6.6659956,
+          "easeFactor": 2.35
+        },
+        "3": {
+          "state": 2,
+          "scheduledDays": 86,
+          "lapses": 0,
+          "stability": 85.02794,
+          "difficulty": 4.990228,
+          "easeFactor": 2.5
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 135,
+          "lapses": 0,
+          "stability": 133.06183,
+          "difficulty": 3.3144615,
+          "easeFactor": 2.65
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "review": {
+              "scheduled_days": 30,
+              "elapsed_days": 30,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 30.0,
+                "difficulty": 5.0
+              },
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "relearning": {
+              "review": {
+                "scheduled_days": 2,
+                "ease_factor": 2.3,
+                "lapses": 1,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_days": 0,
+                "leeched": false
+              },
+              "learning": {
+                "remaining_steps": 1,
+                "scheduled_secs": 60,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_secs": 0
+              }
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "review": {
+              "scheduled_days": 64,
+              "ease_factor": 2.35,
+              "memory_state": {
+                "stability": 63.093803,
+                "difficulty": 6.6659956
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "review": {
+              "scheduled_days": 86,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 85.02794,
+                "difficulty": 4.990228
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 135,
+              "ease_factor": 2.65,
+              "memory_state": {
+                "stability": 133.06183,
+                "difficulty": 3.3144615
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "fuzz-new-1700000000001-reps7",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-new-1700000000001-reps7",
+        "state": 0,
+        "stability": 0,
+        "difficulty": 0,
+        "reps": 7,
+        "lapses": 0,
+        "scheduledDays": 0,
+        "scheduleStatus": "new",
+        "dueAt": "2026-11-20T05:35:26.000Z",
+        "lastReviewAt": null,
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000001
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 0,
+      "currentState": {
+        "normal": {
+          "new": {
+            "position": 1
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 0.212,
+          "difficulty": 6.4133,
+          "remainingSteps": 2,
+          "scheduledSeconds": 60
+        },
+        "2": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 1.2931,
+          "difficulty": 5.1121707,
+          "remainingSteps": 2,
+          "scheduledSeconds": 330
+        },
+        "3": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 2.3065,
+          "difficulty": 2.118104,
+          "remainingSteps": 1,
+          "scheduledSeconds": 600
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 6,
+          "lapses": 0,
+          "stability": 8.2956,
+          "difficulty": 1.0,
+          "easeFactor": 2.5
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "new": {
+              "position": 1
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 60,
+              "memory_state": {
+                "stability": 0.212,
+                "difficulty": 6.4133
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 330,
+              "memory_state": {
+                "stability": 1.2931,
+                "difficulty": 5.1121707
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 1,
+              "scheduled_secs": 600,
+              "memory_state": {
+                "stability": 2.3065,
+                "difficulty": 2.118104
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 6,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 8.2956,
+                "difficulty": 1.0
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      },
+      "appliedLearningSeconds": {
+        "1": 62,
+        "3": 626
+      }
+    },
+    {
+      "name": "fuzz-review-1700000000001-reps7",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-review-1700000000001-reps7",
+        "state": 2,
+        "stability": 30.0,
+        "difficulty": 5.0,
+        "reps": 7,
+        "lapses": 0,
+        "scheduledDays": 30,
+        "scheduleStatus": "review",
+        "dueAt": "2026-11-20T04:00:00.000Z",
+        "lastReviewAt": "2026-10-21T05:35:26.000Z",
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000001
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 30,
+      "currentState": {
+        "normal": {
+          "review": {
+            "scheduled_days": 30,
+            "elapsed_days": 30,
+            "ease_factor": 2.5,
+            "memory_state": {
+              "stability": 30.0,
+              "difficulty": 5.0
+            },
+            "lapses": 0,
+            "leeched": false
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 3,
+          "scheduledDays": 2,
+          "lapses": 1,
+          "stability": 2.3239887,
+          "difficulty": 8.341763,
+          "remainingSteps": 1,
+          "scheduledSeconds": 60,
+          "easeFactor": 2.3
+        },
+        "2": {
+          "state": 2,
+          "scheduledDays": 59,
+          "lapses": 0,
+          "stability": 63.093803,
+          "difficulty": 6.6659956,
+          "easeFactor": 2.35
+        },
+        "3": {
+          "state": 2,
+          "scheduledDays": 81,
+          "lapses": 0,
+          "stability": 85.02794,
+          "difficulty": 4.990228,
+          "easeFactor": 2.5
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 127,
+          "lapses": 0,
+          "stability": 133.06183,
+          "difficulty": 3.3144615,
+          "easeFactor": 2.65
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "review": {
+              "scheduled_days": 30,
+              "elapsed_days": 30,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 30.0,
+                "difficulty": 5.0
+              },
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "relearning": {
+              "review": {
+                "scheduled_days": 2,
+                "ease_factor": 2.3,
+                "lapses": 1,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_days": 0,
+                "leeched": false
+              },
+              "learning": {
+                "remaining_steps": 1,
+                "scheduled_secs": 60,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_secs": 0
+              }
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "review": {
+              "scheduled_days": 59,
+              "ease_factor": 2.35,
+              "memory_state": {
+                "stability": 63.093803,
+                "difficulty": 6.6659956
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "review": {
+              "scheduled_days": 81,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 85.02794,
+                "difficulty": 4.990228
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 127,
+              "ease_factor": 2.65,
+              "memory_state": {
+                "stability": 133.06183,
+                "difficulty": 3.3144615
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "fuzz-new-1700000000002-reps0",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-new-1700000000002-reps0",
+        "state": 0,
+        "stability": 0,
+        "difficulty": 0,
+        "reps": 0,
+        "lapses": 0,
+        "scheduledDays": 0,
+        "scheduleStatus": "new",
+        "dueAt": "2026-11-20T05:35:26.000Z",
+        "lastReviewAt": null,
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000002
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 0,
+      "currentState": {
+        "normal": {
+          "new": {
+            "position": 1
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 0.212,
+          "difficulty": 6.4133,
+          "remainingSteps": 2,
+          "scheduledSeconds": 60
+        },
+        "2": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 1.2931,
+          "difficulty": 5.1121707,
+          "remainingSteps": 2,
+          "scheduledSeconds": 330
+        },
+        "3": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 2.3065,
+          "difficulty": 2.118104,
+          "remainingSteps": 1,
+          "scheduledSeconds": 600
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 8,
+          "lapses": 0,
+          "stability": 8.2956,
+          "difficulty": 1.0,
+          "easeFactor": 2.5
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "new": {
+              "position": 1
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 60,
+              "memory_state": {
+                "stability": 0.212,
+                "difficulty": 6.4133
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 330,
+              "memory_state": {
+                "stability": 1.2931,
+                "difficulty": 5.1121707
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 1,
+              "scheduled_secs": 600,
+              "memory_state": {
+                "stability": 2.3065,
+                "difficulty": 2.118104
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 8,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 8.2956,
+                "difficulty": 1.0
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      },
+      "appliedLearningSeconds": {
+        "1": 68,
+        "3": 688
+      }
+    },
+    {
+      "name": "fuzz-review-1700000000002-reps0",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-review-1700000000002-reps0",
+        "state": 2,
+        "stability": 30.0,
+        "difficulty": 5.0,
+        "reps": 0,
+        "lapses": 0,
+        "scheduledDays": 30,
+        "scheduleStatus": "review",
+        "dueAt": "2026-11-20T04:00:00.000Z",
+        "lastReviewAt": "2026-10-21T05:35:26.000Z",
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000002
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 30,
+      "currentState": {
+        "normal": {
+          "review": {
+            "scheduled_days": 30,
+            "elapsed_days": 30,
+            "ease_factor": 2.5,
+            "memory_state": {
+              "stability": 30.0,
+              "difficulty": 5.0
+            },
+            "lapses": 0,
+            "leeched": false
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 3,
+          "scheduledDays": 2,
+          "lapses": 1,
+          "stability": 2.3239887,
+          "difficulty": 8.341763,
+          "remainingSteps": 1,
+          "scheduledSeconds": 60,
+          "easeFactor": 2.3
+        },
+        "2": {
+          "state": 2,
+          "scheduledDays": 64,
+          "lapses": 0,
+          "stability": 63.093803,
+          "difficulty": 6.6659956,
+          "easeFactor": 2.35
+        },
+        "3": {
+          "state": 2,
+          "scheduledDays": 86,
+          "lapses": 0,
+          "stability": 85.02794,
+          "difficulty": 4.990228,
+          "easeFactor": 2.5
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 135,
+          "lapses": 0,
+          "stability": 133.06183,
+          "difficulty": 3.3144615,
+          "easeFactor": 2.65
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "review": {
+              "scheduled_days": 30,
+              "elapsed_days": 30,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 30.0,
+                "difficulty": 5.0
+              },
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "relearning": {
+              "review": {
+                "scheduled_days": 2,
+                "ease_factor": 2.3,
+                "lapses": 1,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_days": 0,
+                "leeched": false
+              },
+              "learning": {
+                "remaining_steps": 1,
+                "scheduled_secs": 60,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_secs": 0
+              }
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "review": {
+              "scheduled_days": 64,
+              "ease_factor": 2.35,
+              "memory_state": {
+                "stability": 63.093803,
+                "difficulty": 6.6659956
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "review": {
+              "scheduled_days": 86,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 85.02794,
+                "difficulty": 4.990228
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 135,
+              "ease_factor": 2.65,
+              "memory_state": {
+                "stability": 133.06183,
+                "difficulty": 3.3144615
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "fuzz-new-1700000000002-reps1",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-new-1700000000002-reps1",
+        "state": 0,
+        "stability": 0,
+        "difficulty": 0,
+        "reps": 1,
+        "lapses": 0,
+        "scheduledDays": 0,
+        "scheduleStatus": "new",
+        "dueAt": "2026-11-20T05:35:26.000Z",
+        "lastReviewAt": null,
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000002
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 0,
+      "currentState": {
+        "normal": {
+          "new": {
+            "position": 1
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 0.212,
+          "difficulty": 6.4133,
+          "remainingSteps": 2,
+          "scheduledSeconds": 60
+        },
+        "2": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 1.2931,
+          "difficulty": 5.1121707,
+          "remainingSteps": 2,
+          "scheduledSeconds": 330
+        },
+        "3": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 2.3065,
+          "difficulty": 2.118104,
+          "remainingSteps": 1,
+          "scheduledSeconds": 600
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 10,
+          "lapses": 0,
+          "stability": 8.2956,
+          "difficulty": 1.0,
+          "easeFactor": 2.5
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "new": {
+              "position": 1
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 60,
+              "memory_state": {
+                "stability": 0.212,
+                "difficulty": 6.4133
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 330,
+              "memory_state": {
+                "stability": 1.2931,
+                "difficulty": 5.1121707
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 1,
+              "scheduled_secs": 600,
+              "memory_state": {
+                "stability": 2.3065,
+                "difficulty": 2.118104
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 10,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 8.2956,
+                "difficulty": 1.0
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      },
+      "appliedLearningSeconds": {
+        "1": 72,
+        "3": 725
+      }
+    },
+    {
+      "name": "fuzz-review-1700000000002-reps1",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-review-1700000000002-reps1",
+        "state": 2,
+        "stability": 30.0,
+        "difficulty": 5.0,
+        "reps": 1,
+        "lapses": 0,
+        "scheduledDays": 30,
+        "scheduleStatus": "review",
+        "dueAt": "2026-11-20T04:00:00.000Z",
+        "lastReviewAt": "2026-10-21T05:35:26.000Z",
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000002
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 30,
+      "currentState": {
+        "normal": {
+          "review": {
+            "scheduled_days": 30,
+            "elapsed_days": 30,
+            "ease_factor": 2.5,
+            "memory_state": {
+              "stability": 30.0,
+              "difficulty": 5.0
+            },
+            "lapses": 0,
+            "leeched": false
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 3,
+          "scheduledDays": 2,
+          "lapses": 1,
+          "stability": 2.3239887,
+          "difficulty": 8.341763,
+          "remainingSteps": 1,
+          "scheduledSeconds": 60,
+          "easeFactor": 2.3
+        },
+        "2": {
+          "state": 2,
+          "scheduledDays": 67,
+          "lapses": 0,
+          "stability": 63.093803,
+          "difficulty": 6.6659956,
+          "easeFactor": 2.35
+        },
+        "3": {
+          "state": 2,
+          "scheduledDays": 89,
+          "lapses": 0,
+          "stability": 85.02794,
+          "difficulty": 4.990228,
+          "easeFactor": 2.5
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 139,
+          "lapses": 0,
+          "stability": 133.06183,
+          "difficulty": 3.3144615,
+          "easeFactor": 2.65
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "review": {
+              "scheduled_days": 30,
+              "elapsed_days": 30,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 30.0,
+                "difficulty": 5.0
+              },
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "relearning": {
+              "review": {
+                "scheduled_days": 2,
+                "ease_factor": 2.3,
+                "lapses": 1,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_days": 0,
+                "leeched": false
+              },
+              "learning": {
+                "remaining_steps": 1,
+                "scheduled_secs": 60,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_secs": 0
+              }
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "review": {
+              "scheduled_days": 67,
+              "ease_factor": 2.35,
+              "memory_state": {
+                "stability": 63.093803,
+                "difficulty": 6.6659956
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "review": {
+              "scheduled_days": 89,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 85.02794,
+                "difficulty": 4.990228
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 139,
+              "ease_factor": 2.65,
+              "memory_state": {
+                "stability": 133.06183,
+                "difficulty": 3.3144615
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "fuzz-new-1700000000002-reps7",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-new-1700000000002-reps7",
+        "state": 0,
+        "stability": 0,
+        "difficulty": 0,
+        "reps": 7,
+        "lapses": 0,
+        "scheduledDays": 0,
+        "scheduleStatus": "new",
+        "dueAt": "2026-11-20T05:35:26.000Z",
+        "lastReviewAt": null,
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000002
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 0,
+      "currentState": {
+        "normal": {
+          "new": {
+            "position": 1
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 0.212,
+          "difficulty": 6.4133,
+          "remainingSteps": 2,
+          "scheduledSeconds": 60
+        },
+        "2": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 1.2931,
+          "difficulty": 5.1121707,
+          "remainingSteps": 2,
+          "scheduledSeconds": 330
+        },
+        "3": {
+          "state": 1,
+          "scheduledDays": 0,
+          "lapses": 0,
+          "stability": 2.3065,
+          "difficulty": 2.118104,
+          "remainingSteps": 1,
+          "scheduledSeconds": 600
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 7,
+          "lapses": 0,
+          "stability": 8.2956,
+          "difficulty": 1.0,
+          "easeFactor": 2.5
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "new": {
+              "position": 1
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 60,
+              "memory_state": {
+                "stability": 0.212,
+                "difficulty": 6.4133
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 2,
+              "scheduled_secs": 330,
+              "memory_state": {
+                "stability": 1.2931,
+                "difficulty": 5.1121707
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "learning": {
+              "remaining_steps": 1,
+              "scheduled_secs": 600,
+              "memory_state": {
+                "stability": 2.3065,
+                "difficulty": 2.118104
+              },
+              "elapsed_secs": 0
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 7,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 8.2956,
+                "difficulty": 1.0
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      },
+      "appliedLearningSeconds": {
+        "1": 64,
+        "3": 647
+      }
+    },
+    {
+      "name": "fuzz-review-1700000000002-reps7",
+      "now": "2026-11-20T05:35:26.000Z",
+      "card": {
+        "cardId": "fuzz-review-1700000000002-reps7",
+        "state": 2,
+        "stability": 30.0,
+        "difficulty": 5.0,
+        "reps": 7,
+        "lapses": 0,
+        "scheduledDays": 30,
+        "scheduleStatus": "review",
+        "dueAt": "2026-11-20T04:00:00.000Z",
+        "lastReviewAt": "2026-10-21T05:35:26.000Z",
+        "learningStep": 0,
+        "anki": {
+          "remainingSteps": 0,
+          "scheduledSeconds": 0,
+          "easeFactor": 2.5,
+          "seedId": 1700000000002
+        }
+      },
+      "options": {
+        "enableFuzz": true,
+        "desiredRetention": 0.9,
+        "maximumInterval": 36500
+      },
+      "elapsedFsrsDays": 30,
+      "currentState": {
+        "normal": {
+          "review": {
+            "scheduled_days": 30,
+            "elapsed_days": 30,
+            "ease_factor": 2.5,
+            "memory_state": {
+              "stability": 30.0,
+              "difficulty": 5.0
+            },
+            "lapses": 0,
+            "leeched": false
+          }
+        }
+      },
+      "expected": {
+        "1": {
+          "state": 3,
+          "scheduledDays": 2,
+          "lapses": 1,
+          "stability": 2.3239887,
+          "difficulty": 8.341763,
+          "remainingSteps": 1,
+          "scheduledSeconds": 60,
+          "easeFactor": 2.3
+        },
+        "2": {
+          "state": 2,
+          "scheduledDays": 61,
+          "lapses": 0,
+          "stability": 63.093803,
+          "difficulty": 6.6659956,
+          "easeFactor": 2.35
+        },
+        "3": {
+          "state": 2,
+          "scheduledDays": 83,
+          "lapses": 0,
+          "stability": 85.02794,
+          "difficulty": 4.990228,
+          "easeFactor": 2.5
+        },
+        "4": {
+          "state": 2,
+          "scheduledDays": 129,
+          "lapses": 0,
+          "stability": 133.06183,
+          "difficulty": 3.3144615,
+          "easeFactor": 2.65
+        }
+      },
+      "rawStates": {
+        "current": {
+          "normal": {
+            "review": {
+              "scheduled_days": 30,
+              "elapsed_days": 30,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 30.0,
+                "difficulty": 5.0
+              },
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "again": {
+          "normal": {
+            "relearning": {
+              "review": {
+                "scheduled_days": 2,
+                "ease_factor": 2.3,
+                "lapses": 1,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_days": 0,
+                "leeched": false
+              },
+              "learning": {
+                "remaining_steps": 1,
+                "scheduled_secs": 60,
+                "memory_state": {
+                  "stability": 2.3239887,
+                  "difficulty": 8.341763
+                },
+                "elapsed_secs": 0
+              }
+            }
+          }
+        },
+        "hard": {
+          "normal": {
+            "review": {
+              "scheduled_days": 61,
+              "ease_factor": 2.35,
+              "memory_state": {
+                "stability": 63.093803,
+                "difficulty": 6.6659956
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "good": {
+          "normal": {
+            "review": {
+              "scheduled_days": 83,
+              "ease_factor": 2.5,
+              "memory_state": {
+                "stability": 85.02794,
+                "difficulty": 4.990228
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        },
+        "easy": {
+          "normal": {
+            "review": {
+              "scheduled_days": 129,
+              "ease_factor": 2.65,
+              "memory_state": {
+                "stability": 133.06183,
+                "difficulty": 3.3144615
+              },
+              "elapsed_days": 0,
+              "lapses": 0,
+              "leeched": false
+            }
+          }
+        }
+      }
+    }
+  ]
+}

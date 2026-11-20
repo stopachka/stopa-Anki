@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ArrowLeft, Check, RefreshCw, Settings2 } from 'lucide-react';
-import { State, type Grade } from 'ts-fsrs';
+import { ArrowLeft, Check, Github, RefreshCw, Settings2 } from 'lucide-react';
+import { State, type Grade } from './lib/anki/types';
 import type { Book, Word } from './types';
-import { grades, intervalLabel, nextWord, summarizeWords, type Memories, type Scheduler, type WordCounts } from './lib/scheduler';
+import { answerIntervalLabel, grades, intervalLabel, StudyQueue, summarizeWords, type Memories, type Scheduler, type WordCounts } from './lib/scheduler';
 import { db } from './lib/db';
 import { useProgress } from './lib/progress';
 import { useSettings } from './lib/settings';
@@ -38,7 +38,7 @@ function StudyCard({ word, memory, scheduler, counts, saving, onGrade }: {
   const cardButton = useRef<HTMLButtonElement>(null);
   // Keep this presentation's scheduling input stable while Instant updates optimistically.
   const [card] = useState(() => memory ?? scheduler.newCard({ cardId: word.id, now: enteredAt }));
-  const predictions = useMemo(() => grades.map(({ rating, label }) => ({ rating, label, interval: intervalLabel(scheduler.review({ card, grade: rating, now: previewAt }).card.dueAt, previewAt) })), [card, previewAt, scheduler]);
+  const predictions = useMemo(() => grades.map(({ rating, label }) => ({ rating, label, interval: answerIntervalLabel(scheduler.review({ card, grade: rating, now: previewAt })) })), [card, previewAt, scheduler]);
   useEffect(() => { cardButton.current?.focus({ preventScroll: true }); }, []);
   const flip = () => {
     if (saving || pending) return;
@@ -89,6 +89,7 @@ export default function App({ books, words, scheduler, user }: AppProps) {
   const error = progressError || settings.error;
   const remainingNew = remainingNewWords(settings.dailyNewLimit, introductions);
   const [reviewTurn, setReviewTurn] = useState(0);
+  const studyQueue = useRef(new StudyQueue());
   const [signingOut, setSigningOut] = useState(false);
   const [accountError, setAccountError] = useState('');
   const scope = useMemo(() => words.filter(word => word.book === selectedBook?.book), [words, selectedBook]);
@@ -96,12 +97,12 @@ export default function App({ books, words, scheduler, user }: AppProps) {
   const counts = summarizeWords(scope, memories, clock, remainingNew);
   const unseen = scope.some(word => !memories[word.id]);
   const dailyLimitReached = remainingNew === 0 && unseen;
-  const nextDue = scope.map(word => memories[word.id]?.dueAt).filter((date): date is Date => !!date).sort((a, b) => a.getTime() - b.getTime())[0];
+  const nextDue = scope.map(word => memories[word.id]?.dueAt).filter((date): date is Date => !!date && date > clock).sort((a, b) => a.getTime() - b.getTime())[0];
 
   useEffect(() => { const timer = window.setInterval(() => setClock(new Date()), 5000); return () => window.clearInterval(timer); }, []);
   useEffect(() => {
     if (!isLoading && !error && !saving && selectedBook && !current) {
-      const next = nextWord(scope, memories, clock, remainingNew);
+      const next = studyQueue.current.next(scope, memories, clock, remainingNew);
       if (next) setCurrentId(next.id);
     }
   }, [clock, scope, memories, selectedBook, current, isLoading, error, saving, remainingNew]);
@@ -109,18 +110,19 @@ export default function App({ books, words, scheduler, user }: AppProps) {
   // A different device may use the shared allowance while this card is open.
   useEffect(() => {
     if (!saving && !isLoading && current && !memories[current.id] && remainingNew === 0) {
-      setCurrentId(nextWord(scope, memories, clock, 0)?.id ?? null);
+      setCurrentId(studyQueue.current.next(scope, memories, clock, 0)?.id ?? null);
     }
   }, [saving, isLoading, current, memories, remainingNew, scope, clock]);
 
   const begin = (book: Book) => {
     if (saving || settings.saving || isLoading || error) return;
     const selection = words.filter(word => word.book === book.book);
+    studyQueue.current.reset();
     setSelectedBook(book);
-    setCurrentId(nextWord(selection, memories, new Date(), remainingNew)?.id ?? null);
+    setCurrentId(studyQueue.current.next(selection, memories, new Date(), remainingNew)?.id ?? null);
     window.scrollTo({ top: 0 });
   };
-  const closeBook = () => { if (saving) return; setSelectedBook(null); setCurrentId(null); window.scrollTo({ top: 0 }); };
+  const closeBook = () => { if (saving) return; studyQueue.current.reset(); setSelectedBook(null); setCurrentId(null); window.scrollTo({ top: 0 }); };
   const grade = async (rating: Grade) => {
     if (!current || saving) return;
     const now = new Date();
@@ -130,7 +132,10 @@ export default function App({ books, words, scheduler, user }: AppProps) {
     await saveReview(current, result.card, result.revlog);
     const updatedIntroductions = new Set(introductions);
     if (card.state === State.New) updatedIntroductions.add(current.id);
-    setCurrentId(nextWord(scope, updated, new Date(), remainingNewWords(settings.dailyNewLimit, updatedIntroductions))?.id ?? null);
+    const availableNew = remainingNewWords(settings.dailyNewLimit, updatedIntroductions);
+    const queuedAt = new Date();
+    studyQueue.current.answer(current.id, updated, scope, queuedAt, availableNew);
+    setCurrentId(studyQueue.current.next(scope, updated, queuedAt, availableNew)?.id ?? null);
     setReviewTurn(turn => turn + 1);
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
@@ -157,7 +162,7 @@ export default function App({ books, words, scheduler, user }: AppProps) {
           <StudyCounts counts={bookCounts} />
         </button>;
       })}</div>
-      <div className="home-tools"><button className="home-refresh" disabled={saving || settings.saving || signingOut} aria-label="Refresh app" title="Refresh app" onClick={() => window.location.reload()}><RefreshCw size={16} aria-hidden="true" /></button><button className="home-settings" disabled={saving || signingOut} aria-label="Settings" title="Settings" onClick={() => setSettingsOpen(true)}><Settings2 size={17} aria-hidden="true" /></button></div>
+      <div className="home-tools"><button className="home-refresh" disabled={saving || settings.saving || signingOut} aria-label="Refresh app" title="Refresh app" onClick={() => window.location.reload()}><RefreshCw size={16} aria-hidden="true" /></button><button className="home-settings" disabled={saving || signingOut} aria-label="Settings" title="Settings" onClick={() => setSettingsOpen(true)}><Settings2 size={17} aria-hidden="true" /></button><a className="home-source" href="https://github.com/stopachka/stopa-Anki" target="_blank" rel="noreferrer" aria-label="Source code" title="Source code"><Github size={16} aria-hidden="true" /></a></div>
     </main> : <main className="study-main">
       <div className="study-heading"><button className="books-button" disabled={saving} onClick={closeBook} aria-label="Back to books" title="Back to books"><ArrowLeft size={20} aria-hidden="true" /></button><span className="study-book-title">{selectedBook.title}</span></div>
       <div className="session-progress"><div className="progress-track" role="progressbar" aria-label="Cards started" aria-valuemin={0} aria-valuemax={counts.total} aria-valuenow={counts.started}><span style={{ width: `${counts.total ? (counts.started / counts.total) * 100 : 0}%` }} /></div><span>{counts.started} / {counts.total}</span></div>

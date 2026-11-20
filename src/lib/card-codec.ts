@@ -23,6 +23,27 @@ function reviveDate(value: unknown, field: string): Date {
   return date;
 }
 
+function validateAnkiMetadata(value: unknown): void {
+  if (value === undefined) return; // Cards saved before the Anki port have no metadata.
+  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Invalid saved Anki metadata');
+  const metadata = value as Record<string, unknown>;
+  if (metadata.version !== 1) throw new Error('Unsupported saved Anki metadata version');
+  if (typeof metadata.seedId !== 'string' || !/^\d{1,20}$/.test(metadata.seedId) || BigInt(metadata.seedId) > 0xffffffffffffffffn) {
+    throw new Error('Invalid saved Anki seed ID');
+  }
+  for (const field of ['remainingSteps', 'scheduledSeconds']) {
+    const number = metadata[field];
+    if (typeof number !== 'number' || !Number.isInteger(number) || number < 0 || number > 0xffffffff) throw new Error(`Invalid saved Anki ${field}`);
+  }
+  if (typeof metadata.easeFactor !== 'number' || !Number.isFinite(metadata.easeFactor) || metadata.easeFactor <= 0) throw new Error('Invalid saved Anki ease factor');
+  if (metadata.dueDay !== undefined) {
+    const day = metadata.dueDay;
+    const parsed = typeof day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(day) ? new Date(`${day}T00:00:00.000Z`) : new Date(NaN);
+    if (!Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== day) throw new Error('Invalid saved Anki due day');
+  }
+  if (metadata.leeched !== undefined && typeof metadata.leeched !== 'boolean') throw new Error('Invalid saved Anki leech flag');
+}
+
 export function serializeCard(card: MemoryCard): StoredCard {
   const stored: StoredCard = {
     ...card,
@@ -49,6 +70,7 @@ export function deserializeCard(value: unknown): MemoryCard {
   if (!['new', 'learning', 'review'].includes(card.scheduleStatus as string)) throw new Error('Invalid saved schedule status');
   if (typeof card.cardId !== 'string' && typeof card.cardId !== 'number') throw new Error('Invalid saved card ID');
   if (card.learningStep !== undefined && (!Number.isInteger(card.learningStep) || (card.learningStep as number) < 0)) throw new Error('Invalid saved learning step');
+  validateAnkiMetadata(card.anki);
   return { ...card, dueAt, lastReviewAt } as MemoryCard;
 }
 

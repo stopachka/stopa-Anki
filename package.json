@@ -7,15 +7,14 @@
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "node --experimental-strip-types --test src/lib/*.test.ts"
+    "test": "node --experimental-strip-types --test src/lib/*.test.ts src/lib/anki/*.test.ts"
   },
   "dependencies": {
     "@instantdb/react": "^1.0.67",
     "hanzi-writer": "3.7.3",
     "lucide-react": "^0.468.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "ts-fsrs": "6.0.0"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@instantdb/admin": "^1.0.67",

@@ -201,6 +201,8 @@ html:has(.study-shell),body:has(.study-shell){overflow:hidden;overscroll-behavio
 .study-shell,.study-shell *{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
 .home-tools .home-settings{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%}
 .home-tools .home-settings:hover:not(:disabled){background:#f4f4f4;text-decoration:none}
+.home-tools .home-source{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;color:#737373}
+.home-tools .home-source:hover{background:#f4f4f4;color:#333}
 .settings-dialog{width:min(420px,calc(100vw - 32px));padding:22px;border:1px solid var(--line);border-radius:22px;color:#242424;background:#fff;box-shadow:0 20px 80px #00000017;max-height:calc(100dvh - 32px)}
 .settings-dialog::backdrop{background:#0003;backdrop-filter:blur(3px)}
 .settings-dialog .dialog-heading{margin-bottom:24px}
