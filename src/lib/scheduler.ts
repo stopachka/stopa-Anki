@@ -1,7 +1,7 @@
 import { DefaultScheduler, Rating, State, type Grade } from 'ts-fsrs';
 import type { Word } from '../types.ts';
 
-// Pin the model separately from the package version. No persistence in this prototype.
+// Pin the model separately from the package version.
 export const makeScheduler = () => DefaultScheduler({
   version: 'FSRS-6',
   desiredRetention: 0.9,
@@ -23,7 +23,7 @@ export interface WordCounts {
   started: number;
 }
 
-export function summarizeWords(words: Word[], memories: Memories, now: Date): WordCounts {
+export function summarizeWords(words: Word[], memories: Memories, now: Date, remainingNew = Infinity): WordCounts {
   const counts: WordCounts = { total: words.length, newCount: 0, learningCount: 0, reviewCount: 0, started: 0 };
   for (const word of words) {
     const card = memories[word.id];
@@ -32,6 +32,7 @@ export function summarizeWords(words: Word[], memories: Memories, now: Date): Wo
     else if (card.state === State.Review && card.dueAt <= now) counts.reviewCount++;
   }
   counts.started = counts.total - counts.newCount;
+  counts.newCount = Math.min(counts.newCount, Math.max(0, Math.floor(remainingNew)));
   return counts;
 }
 
@@ -43,10 +44,10 @@ export const grades: { rating: Grade; label: string }[] = [
 ];
 
 // Due reviews have priority; unseen vocabulary stays in textbook order.
-export function nextWord(words: Word[], memories: Memories, now: Date): Word | undefined {
-  const due = words.filter(word => memories[word.id] && memories[word.id].dueAt <= now);
+export function nextWord(words: Word[], memories: Memories, now: Date, remainingNew = Infinity): Word | undefined {
+  const due = words.filter(word => memories[word.id] && memories[word.id].state !== State.New && memories[word.id].dueAt <= now);
   due.sort((a, b) => memories[a.id].dueAt.getTime() - memories[b.id].dueAt.getTime());
-  return due[0] ?? words.find(word => !memories[word.id]);
+  return due[0] ?? (remainingNew > 0 ? words.find(word => !memories[word.id] || memories[word.id].state === State.New) : undefined);
 }
 
 export function intervalLabel(due: Date, now: Date): string {

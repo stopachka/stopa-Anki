@@ -169,7 +169,7 @@ html:has(.study-shell),body:has(.study-shell){overflow:hidden;overscroll-behavio
 .study-shell .card-face>.word-context,.study-shell .card-word,.study-shell .word-tools{flex-shrink:0}
 .study-shell .card-writing{display:flex;align-items:center;justify-content:center;flex:0 1 320px;min-height:0;container-type:size}
 .study-shell .card-writing[hidden]{display:none}
-.study-shell .card-writing .practice-area{width:max(0px,min(280px,100cqw,calc(100cqh - 40px)));max-width:none;margin:0}
+.study-shell .card-writing .practice-area{width:max(0px,min(calc(280px * var(--practice-columns,1)),100cqw,calc((100cqh - 40px) * var(--practice-columns,1) / var(--practice-rows,1))));max-width:none;margin:0}
 .study-shell .practice-bottom{height:40px;min-height:40px}
 .study-shell .card-answer{flex:0 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;pointer-events:auto;cursor:pointer}
 .study-shell .review-footer{position:static;flex-shrink:0;min-height:0;padding:6px 0 4px}
@@ -196,3 +196,19 @@ html:has(.study-shell),body:has(.study-shell){overflow:hidden;overscroll-behavio
 .study-shell .review-footer{background:transparent}
 .study-shell button,.study-shell .practice-ink{pointer-events:auto}
 .study-shell .word-tools,.study-shell .practice-area{pointer-events:none}
+
+/* Finger gestures should draw or flip, never select the surrounding text. */
+.study-shell,.study-shell *{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.home-tools .home-settings{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%}
+.home-tools .home-settings:hover:not(:disabled){background:#f4f4f4;text-decoration:none}
+.settings-dialog{width:min(420px,calc(100vw - 32px));padding:22px;border:1px solid var(--line);border-radius:22px;color:#242424;background:#fff;box-shadow:0 20px 80px #00000017;max-height:calc(100dvh - 32px)}
+.settings-dialog::backdrop{background:#0003;backdrop-filter:blur(3px)}
+.settings-dialog .dialog-heading{margin-bottom:24px}
+.setting-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:6px}
+.setting-row label{font-size:15px;line-height:1.4}
+.limit-stepper{display:flex;align-items:center;border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;flex-shrink:0}
+.limit-stepper button{display:flex;align-items:center;justify-content:center;width:34px;height:42px;padding:0;color:#777}
+.limit-stepper button:hover:not(:disabled){background:#f6f6f6}
+.limit-stepper input{appearance:textfield;-moz-appearance:textfield;width:43px;border:0;background:transparent;text-align:center;padding:6px 0;font-size:16px;color:#242424;font-variant-numeric:tabular-nums;outline-offset:-2px}
+.limit-stepper input::-webkit-inner-spin-button,.limit-stepper input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.settings-error{font-size:13px;line-height:1.5;color:#a33d3d;margin-top:16px}

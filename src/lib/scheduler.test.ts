@@ -51,3 +51,28 @@ test('deck counters separate unseen, learning, and due reviews without counting 
   assert.equal(summarizeWords(moreWords, memories, new Date(now.getTime() + 86_400_001)).reviewCount, 2);
   assert.deepEqual(summarizeWords([moreWords[0]], memories, now), { total: 1, newCount: 1, learningCount: 0, reviewCount: 0, started: 0 });
 });
+
+test('exhausting the new-word allowance still serves due learning and review cards', async () => {
+  const scheduler = await makeScheduler();
+  const base = scheduler.newCard({ now });
+  const memories = {
+    '2': { ...base, state: State.Learning, dueAt: new Date(now.getTime() - 60_000) },
+    '3': { ...base, state: State.Review, dueAt: new Date(now.getTime() - 30_000) },
+  };
+  assert.equal(nextWord(words, {}, now, 0), undefined);
+  assert.equal(nextWord(words, {}, now, 1)?.id, '1');
+  assert.equal(nextWord(words, memories, now, 0)?.id, '2');
+  assert.equal(nextWord([words[0], words[2]], memories, now, 0)?.id, '3');
+  assert.equal(nextWord(words, { '1': base }, now, 0), undefined);
+  assert.equal(nextWord(words, { '1': base }, now, 1)?.id, '1');
+});
+
+test('the blue counter is capped by today’s allowance without changing total progress', async () => {
+  const scheduler = await makeScheduler();
+  const base = scheduler.newCard({ now });
+  const memories = { '3': { ...base, state: State.Learning } };
+  assert.deepEqual(summarizeWords(words, memories, now, 1), { total: 3, newCount: 1, learningCount: 1, reviewCount: 0, started: 1 });
+  assert.deepEqual(summarizeWords(words, memories, now, 0), { total: 3, newCount: 0, learningCount: 1, reviewCount: 0, started: 1 });
+  assert.equal(summarizeWords(words, memories, now, 10).newCount, 2);
+  assert.equal(summarizeWords(words, memories, now, 10).started, 1);
+});

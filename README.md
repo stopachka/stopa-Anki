@@ -34,6 +34,10 @@ The vocabulary is stored as plain JSON files in `public/data/`: Book 1 has 292 e
 
 Scheduling uses `ts-fsrs` 6.0.0, explicitly configured for **FSRS-6**, the same algorithm family used by Anki. It targets 90% retention, prioritizes due reviews, and introduces new words in textbook order. The four review buttons rate recall of the word’s meaning; drawing does not change that rating.
 
+The default allowance is **10 new words per day across all three books**. Settings beside the home refresh icon adjusts this from 0 to 999 and syncs it with your account. A word consumes one slot when first rated; repeat learning/review answers do not consume another slot. Existing first-review history counts toward today’s allowance. It resets at local midnight without carrying unused slots forward. Blue counts show the available new words today, while progress bars still measure all words started. Due reviews remain available after the new-word limit is reached.
+
+Handwriting practice shows a whole word on one continuous surface: two or three characters side by side, with longer phrases wrapping. Stroke guides animate through the word and repeat. Tap to flip, drag to draw; undo and clear affect the whole drawing. Text selection and touch callouts are disabled during study.
+
 Card states and review history are stored in **InstantDB**, linked to your signed-in account. Reloading restores your progress and next review dates. Rating a card saves its updated FSRS state and review log together before moving on; if saving fails, the revealed card stays available to retry. Offline writes use InstantDB’s local queue and the app shows “Waiting to sync” while confirmation is pending. Sign out and a refresh icon are available on the books page. Source notes and licenses are included with the vocabulary, stroke data, and audio files.
 
 ## Pronunciation audio

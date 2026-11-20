@@ -19,8 +19,13 @@ const schema = i.schema({
       wordId: i.string(),
       book: i.number(),
       rating: i.number(),
-      reviewedAt: i.number(),
+      reviewedAt: i.number().indexed(),
       log: i.json<StoredReviewLog>(),
+    }),
+    hanziSettings: i.entity({
+      ownerId: i.string().unique().indexed(),
+      dailyNewLimit: i.number(),
+      updatedAt: i.number(),
     }),
   },
   links: {

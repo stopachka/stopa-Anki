@@ -21,6 +21,15 @@ const rules = {
     bind: { isOwner: 'auth.id != null && auth.id == data.ownerId' },
     allow: { view: 'isOwner', create: 'isOwner', update: 'false', delete: 'isOwner' },
   },
+  hanziSettings: {
+    bind: {
+      isOwner: 'auth.id != null && auth.id == data.ownerId',
+      isStillOwner: 'auth.id != null && auth.id == newData.ownerId',
+      validLimit: 'data.dailyNewLimit >= 0 && data.dailyNewLimit <= 999 && data.dailyNewLimit == int(data.dailyNewLimit)',
+      validNewLimit: 'newData.dailyNewLimit >= 0 && newData.dailyNewLimit <= 999 && newData.dailyNewLimit == int(newData.dailyNewLimit)',
+    },
+    allow: { view: 'isOwner', create: 'isOwner && validLimit', update: 'isOwner && isStillOwner && validNewLimit', delete: 'isOwner' },
+  },
 } satisfies InstantRules;
 
 export default rules;
