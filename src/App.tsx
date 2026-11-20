@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Check, RefreshCw, X } from 'lucide-react';
+import { ArrowLeft, Check, RefreshCw, X } from 'lucide-react';
 import { State, type Grade } from 'ts-fsrs';
 import type { Book, Word } from './types';
 import { grades, intervalLabel, nextWord, summarizeWords, type Memories, type Scheduler, type WordCounts } from './lib/scheduler';
@@ -78,7 +78,7 @@ function StudyCard({ word, memory, scheduler, counts, saving, onGrade }: {
       <div className="card-face">
         <div className="word-context"><span>Chapter {word.chapter}</span><span className="context-separator">·</span><span>{card.state === State.New ? 'New' : card.state === State.Review ? 'Review' : 'Learning'}</span></div>
         <h1 className={`hanzi-word card-word ${word.traditional.length > 4 ? 'long-word' : ''}`} lang="zh-Hant">{word.traditional}</h1>
-        <div id="word-answer" className="card-answer" hidden={!revealed} aria-live="polite">
+        <div id="word-answer" className="card-answer" hidden={!revealed} aria-live="polite" onClick={flip}>
           {revealed && <><p className="pinyin">{word.pinyin}</p><p className="meaning">{word.english}</p></>}
         </div>
         <div className="word-tools"><Pronunciation word={word} /></div>
@@ -145,8 +145,8 @@ export default function App({ books, words, scheduler, user }: AppProps) {
   };
 
   return <div className={`app-shell ${selectedBook ? 'study-shell' : 'home-shell'}`}>
-    <header className="app-header"><button className="brand" disabled={saving} onClick={closeBook} aria-label="stopa-Anki home"><span className="brand-mark" lang="zh-Hant">文</span><span>stopa-Anki</span></button><div className="header-actions">{syncPending && <span className="sync-status" role="status">Waiting to sync</span>}<button className="signout-button" disabled={saving || signingOut} onClick={() => { void signOut(); }}>{signingOut ? 'Signing out…' : 'Sign out'}</button></div></header>
-    {accountError && <p className="signout-error" role="alert">{accountError}</p>}
+    {!selectedBook && <header className="app-header"><button className="brand" disabled={saving} onClick={closeBook} aria-label="stopa-Anki home"><span className="brand-mark" lang="zh-Hant">文</span><span>stopa-Anki</span></button><div className="header-actions">{syncPending && <span className="sync-status" role="status">Waiting to sync</span>}<button className="signout-button" disabled={saving || signingOut} onClick={() => { void signOut(); }}>{signingOut ? 'Signing out…' : 'Sign out'}</button></div></header>}
+    {!selectedBook && accountError && <p className="signout-error" role="alert">{accountError}</p>}
     {isLoading ? <main className="progress-gate" role="status">Loading your progress…</main> : error ? <main className="progress-gate" role="alert"><h1>Couldn’t load your progress.</h1><button className="primary-button" onClick={() => window.location.reload()}>Try again</button></main> : !selectedBook ? <main className="home-main">
       <section className="home-intro"><h1>Your books</h1></section>
       <div className="book-list">{books.map(book => {
@@ -160,7 +160,7 @@ export default function App({ books, words, scheduler, user }: AppProps) {
       })}</div>
       <div className="home-about"><button onClick={() => setAbout(true)}>About</button><button className="home-refresh" disabled={saving || signingOut} aria-label="Refresh app" title="Refresh app" onClick={() => window.location.reload()}><RefreshCw size={16} aria-hidden="true" /></button></div>
     </main> : <main className="study-main">
-      <div className="study-heading"><button className="books-button" disabled={saving} onClick={closeBook} aria-label="Back to books" title="Back to books"><X size={18} aria-hidden="true" /></button><span className="study-book-title">{selectedBook.title}</span></div>
+      <div className="study-heading"><button className="books-button" disabled={saving} onClick={closeBook} aria-label="Back to books" title="Back to books"><ArrowLeft size={20} aria-hidden="true" /></button><span className="study-book-title">{selectedBook.title}</span></div>
       <div className="session-progress"><div className="progress-track" role="progressbar" aria-label="Cards started" aria-valuemin={0} aria-valuemax={counts.total} aria-valuenow={counts.started}><span style={{ width: `${counts.total ? (counts.started / counts.total) * 100 : 0}%` }} /></div><span>{counts.started} / {counts.total}</span></div>
       {current ? <StudyCard key={`${current.id}-${reviewTurn}`} word={current} memory={memories[current.id]} scheduler={scheduler} counts={counts} saving={saving} onGrade={grade} /> : <><div className="complete-state"><span className="complete-icon"><Check size={26} strokeWidth={1.6} /></span><h1>Caught up</h1>{nextDue && <p className="next-review">Next review · {intervalLabel(nextDue, clock)}</p>}<button className="primary-button" disabled={saving} onClick={closeBook}>Your books</button></div><footer className="review-footer complete-footer"><StudyCounts counts={counts} className="footer-counts" compact /></footer></>}
     </main>}

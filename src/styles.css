@@ -158,3 +158,33 @@
   .flashcard.is-revealed .card-word.long-word{font-size:38px}
   .review-footer .reveal-button{min-height:50px}
 }
+/* Study occupies one screen; only an unusually long answer scrolls internally. */
+html:has(.study-shell),body:has(.study-shell){overflow:hidden;overscroll-behavior:none}
+.app-shell.study-shell{display:flex;flex-direction:column;height:100dvh;min-height:0;overflow:hidden;padding-top:max(8px,env(safe-area-inset-top));padding-bottom:max(8px,env(safe-area-inset-bottom))}
+.study-shell .study-main{flex:1;min-height:0;overflow:hidden}
+.study-shell .study-heading,.study-shell .session-progress{flex-shrink:0}
+.study-shell .session-progress{padding-top:8px}
+.study-shell .flashcard{min-height:0;overflow:hidden;padding:12px 0}
+.study-shell .card-face{height:100%;min-height:0;justify-content:center}
+.study-shell .card-face>.word-context,.study-shell .card-word,.study-shell .word-tools{flex-shrink:0}
+.study-shell .card-writing{display:flex;align-items:center;justify-content:center;flex:0 1 320px;min-height:0;container-type:size}
+.study-shell .card-writing[hidden]{display:none}
+.study-shell .card-writing .practice-area{width:max(0px,min(280px,100cqw,calc(100cqh - 40px)));max-width:none;margin:0}
+.study-shell .practice-bottom{height:40px;min-height:40px}
+.study-shell .card-answer{flex:0 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;pointer-events:auto;cursor:pointer}
+.study-shell .review-footer{position:static;flex-shrink:0;min-height:0;padding:6px 0 4px}
+.study-shell .complete-state{min-height:0;padding:20px 10px}
+.study-shell .progress-gate{min-height:0;flex:1}
+@media(max-height:600px){
+  .study-shell .study-heading{min-height:36px}
+  .study-shell .books-button{height:36px}
+  .study-shell .flashcard{padding:4px 0}
+  .study-shell .card-face>.word-context{display:none}
+  .study-shell .card-word.hanzi-word{font-size:36px;line-height:1.2;margin:2px 0}
+  .study-shell .card-word.hanzi-word.long-word{font-size:28px}
+  .study-shell .card-face .tool-button{height:30px}
+  .study-shell .is-revealed .card-word{font-size:56px;margin:6px 0}
+  .study-shell .is-revealed .card-word.long-word{font-size:34px}
+  .study-shell .review-footer{padding-top:4px}
+  .study-shell .rating-slot,.study-shell .rating-button,.study-shell .reveal-button{min-height:46px}
+}
