@@ -8,7 +8,7 @@ type Stroke = Point[];
 const SIZE = 300;
 const pathOf = (points: Stroke) => points.map((point, i) => `${i ? 'L' : 'M'} ${point.x} ${point.y}`).join(' ');
 
-export function WritingPad({ word }: { word: string }) {
+export function WritingPad({ word, active = true }: { word: string; active?: boolean }) {
   const characters = Array.from(word);
   const [index, setIndex] = useState(0);
   const [drawings, setDrawings] = useState<Record<number, Stroke[]>>({});
@@ -23,6 +23,7 @@ export function WritingPad({ word }: { word: string }) {
   const strokes = drawings[index] ?? [];
 
   useEffect(() => {
+    if (!active) return;
     let disposed = false;
     const controller = new AbortController();
     const mount = document.createElement('div');
@@ -70,7 +71,7 @@ export function WritingPad({ word }: { word: string }) {
       mount.remove();
       writer.current = null;
     };
-  }, [character, index]);
+  }, [character, index, active]);
 
   const replay = () => {
     if (!writer.current || status !== 'ready') return;

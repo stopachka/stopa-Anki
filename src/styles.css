@@ -119,3 +119,40 @@
 .rating-good{--rating-color:#227a47;--rating-background:#f0faf3;--rating-border:#cee5d5;--rating-hover:#e1f3e7}
 .rating-easy{--rating-color:#2563c8;--rating-background:#f1f6ff;--rating-border:#d3e0f6;--rating-hover:#e3edff}
 .rating-interval{color:inherit;opacity:.85}
+/* A full card surface flips between handwriting and the complete answer. */
+.flashcard{position:relative;justify-content:center;min-height:0;padding:24px 0}
+.card-tap-target{position:absolute;inset:0;width:100%;height:100%;padding:0;border-radius:16px;touch-action:manipulation}
+.card-tap-target:focus-visible{outline:2px solid #b5b5b5;outline-offset:-2px}
+.card-face{position:relative;display:flex;flex-direction:column;align-items:center;width:100%;text-align:center;pointer-events:none}
+.card-face .word-tools,.card-face .practice-area{pointer-events:auto}
+.card-word.hanzi-word{width:100%;font-size:54px;line-height:1.4;margin:8px 0 6px;padding:0 8px}
+.card-word.hanzi-word.long-word{font-size:35px}
+.card-face .tool-button{height:36px;border-color:transparent}
+.card-writing{width:100%;margin-top:12px}
+.card-answer{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;padding:0 14px;margin:4px 0 14px}
+.card-answer[hidden],.card-writing[hidden]{display:none}
+.card-answer .pinyin{font-size:25px;margin:0}
+.card-answer .meaning{font-size:18px;line-height:1.6;overflow-wrap:anywhere}
+.flashcard.is-revealed .card-word{font-size:88px;margin:12px 0 8px}
+.flashcard.is-revealed .card-word.long-word{font-size:52px}
+.review-footer .reveal-button{min-height:56px;max-width:520px}
+@media(max-width:480px){
+  .flashcard{padding:18px 0}
+  .card-word.hanzi-word{font-size:48px}
+  .card-word.hanzi-word.long-word{font-size:30px}
+  .card-face .word-context{font-size:12px}
+  .flashcard.is-revealed .card-word{font-size:76px}
+  .flashcard.is-revealed .card-word.long-word{font-size:43px}
+  .card-answer .pinyin{font-size:23px}
+  .card-answer .meaning{font-size:17px}
+  .review-footer .reveal-button{min-height:54px}
+}
+@media(max-height:750px) and (max-width:480px){
+  .flashcard{padding:8px 0}
+  .card-word.hanzi-word{font-size:43px;line-height:1.3;margin:4px 0}
+  .card-word.hanzi-word.long-word{font-size:28px}
+  .card-writing{margin-top:6px}
+  .flashcard.is-revealed .card-word{font-size:68px}
+  .flashcard.is-revealed .card-word.long-word{font-size:38px}
+  .review-footer .reveal-button{min-height:50px}
+}

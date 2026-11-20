@@ -27,7 +27,7 @@ function About({ onClose }: { onClose: () => void }) {
   }, []);
   return <dialog ref={dialog} className="about-dialog" aria-labelledby="about-title" onCancel={onClose} onClick={event => { if (event.target === dialog.current) onClose(); }}>
     <div className="dialog-heading"><h2 id="about-title">About stopa-Anki</h2><button className="icon-button" aria-label="Close about" onClick={onClose}><X size={20} /></button></div>
-    <p>Tap a word to reveal its pinyin and meaning. Draw in the space below it, or follow the faint stroke guide.</p>
+    <p>Tap the card or Show answer to reveal the character, pinyin, and meaning together. Tap the answer to return to handwriting practice.</p>
     <p>The review buttons rate your recall of the word’s meaning. Drawing is optional practice and isn’t automatically graded.</p>
     <p>New counts unseen cards. Learning includes cards waiting for another learning step. Review counts review cards due now.</p>
     <div className="about-note"><strong>Saved to your account</strong><p>Your review history and next review dates sync when you’re signed in.</p></div>
@@ -50,12 +50,18 @@ function StudyCard({ word, memory, scheduler, counts, saving, onGrade }: {
   const [saveError, setSaveError] = useState('');
   const [pending, setPending] = useState(false);
   const submitting = useRef(false);
-  const wordButton = useRef<HTMLButtonElement>(null);
+  const cardButton = useRef<HTMLButtonElement>(null);
+  const revealButton = useRef<HTMLButtonElement>(null);
   // Keep this presentation's scheduling input stable while Instant updates optimistically.
   const [card] = useState(() => memory ?? scheduler.newCard({ cardId: word.id, now: enteredAt }));
   const predictions = useMemo(() => grades.map(({ rating, label }) => ({ rating, label, interval: intervalLabel(scheduler.review({ card, grade: rating, now: previewAt }).card.dueAt, previewAt) })), [card, previewAt, scheduler]);
-  useEffect(() => { wordButton.current?.focus({ preventScroll: true }); }, []);
-  const flip = () => { if (saving || pending) return; if (!revealed) setPreviewAt(new Date()); setRevealed(value => !value); };
+  useEffect(() => { revealButton.current?.focus({ preventScroll: true }); }, []);
+  const flip = () => {
+    if (saving || pending) return;
+    if (!revealed) setPreviewAt(new Date());
+    setRevealed(value => !value);
+    cardButton.current?.focus({ preventScroll: true });
+  };
   const submit = async (grade: Grade) => {
     if (submitting.current || saving) return;
     submitting.current = true;
@@ -67,19 +73,20 @@ function StudyCard({ word, memory, scheduler, counts, saving, onGrade }: {
   };
 
   return <>
-    <div className="study-content always-writing">
-      <div className="word-stage">
+    <div className={`study-content flashcard ${revealed ? 'is-revealed' : ''}`}>
+      <button ref={cardButton} className="card-tap-target" disabled={saving || pending} aria-label={`${revealed ? 'Show question' : 'Reveal answer'} for ${word.traditional}`} aria-expanded={revealed} aria-controls="word-answer" onClick={flip} />
+      <div className="card-face">
         <div className="word-context"><span>Chapter {word.chapter}</span><span className="context-separator">·</span><span>{card.state === State.New ? 'New' : card.state === State.Review ? 'Review' : 'Learning'}</span></div>
-        <h1 className="word-heading"><button ref={wordButton} disabled={saving || pending} className={`word-flip hanzi-word ${word.traditional.length > 4 ? 'long-word' : ''}`} aria-label={`${revealed ? 'Hide answer' : 'Reveal answer'} for ${word.traditional}`} aria-expanded={revealed} aria-controls="word-answer" onClick={flip}><span lang="zh-Hant">{word.traditional}</span></button></h1>
+        <h1 className={`hanzi-word card-word ${word.traditional.length > 4 ? 'long-word' : ''}`} lang="zh-Hant">{word.traditional}</h1>
+        <div id="word-answer" className="card-answer" hidden={!revealed} aria-live="polite">
+          {revealed && <><p className="pinyin">{word.pinyin}</p><p className="meaning">{word.english}</p></>}
+        </div>
         <div className="word-tools"><Pronunciation word={word} /></div>
-      </div>
-      <WritingPad word={word.traditional} />
-      <div id="word-answer" className={`answer ${revealed ? 'is-revealed' : ''}`} aria-live="polite">
-        {revealed && <button className="answer-flip" disabled={saving || pending} onClick={flip} aria-label="Hide answer"><span className="pinyin">{word.pinyin}</span><span className="meaning">{word.english}</span></button>}
+        <div className="card-writing" hidden={revealed}><WritingPad word={word.traditional} active={!revealed} /></div>
       </div>
     </div>
     <footer className="review-footer" aria-busy={saving || pending}>
-      <div className="rating-slot">{revealed && <div className="rating-buttons" aria-label="Rate your recall">{predictions.map(({ rating, label, interval }) => <button key={rating} className={`rating-button rating-${label.toLowerCase()}`} disabled={saving || pending} onClick={() => { void submit(rating); }}><span>{label}</span><span className="rating-interval">{interval}</span></button>)}</div>}</div>
+      <div className="rating-slot">{revealed ? <div className="rating-buttons" aria-label="Rate your recall">{predictions.map(({ rating, label, interval }) => <button key={rating} className={`rating-button rating-${label.toLowerCase()}`} disabled={saving || pending} onClick={() => { void submit(rating); }}><span>{label}</span><span className="rating-interval">{interval}</span></button>)}</div> : <button ref={revealButton} className="primary-button reveal-button" disabled={saving || pending} onClick={flip}>Show answer</button>}</div>
       {(saving || pending) && <span className="sr-only" role="status">Saving review</span>}
       {saveError && <p className="save-error" role="alert">{saveError}</p>}
       <StudyCounts counts={counts} className="footer-counts" compact />

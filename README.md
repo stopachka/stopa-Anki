@@ -2,7 +2,7 @@
 
 [Open the app](https://stopa-anki.vercel.app) · [Source on GitHub](https://github.com/stopachka/stopa-Anki)
 
-A minimal, mobile-first Chinese study app built with React, TypeScript, and Vite. Choose a book, tap the traditional Chinese word to reveal its pinyin and English meaning, and rate your recall. The writing pad is always available, with a faint Hanzi stroke guide that repeats automatically while you draw, pausing briefly between loops. Automatic animation respects reduced-motion preferences. Drawing is optional practice; it is not automatically graded.
+A minimal, mobile-first Chinese study app built with React, TypeScript, and Vite. Choose a book, practice the traditional Chinese word, then tap the card or the bottom Show answer button. The card flips to the character, pinyin, and English meaning together, with recall ratings at the bottom. Tap the answer to return to the question; your handwriting stays intact. The front has a writing pad with a faint Hanzi stroke guide that repeats automatically while you draw, pausing briefly between loops. Automatic animation respects reduced-motion preferences and pauses on the answer side. Drawing is optional practice; it is not automatically graded.
 
 ## Run locally
 
