@@ -11,6 +11,16 @@ export type StoredReviewLog = Omit<ReviewLog, 'dueAt' | 'lastReviewAt' | 'review
   reviewTime: string;
 };
 
+export type ReviewRecord = {
+  id: string;
+  ownerId: string;
+  wordId: string;
+  book: number;
+  rating: number;
+  reviewedAt: number;
+  log: StoredReviewLog;
+};
+
 function iso(date: Date, field: string): string {
   if (!(date instanceof Date) || !Number.isFinite(date.getTime())) throw new Error(`Invalid ${field}`);
   return date.toISOString();
@@ -75,6 +85,8 @@ export function deserializeCard(value: unknown): MemoryCard {
 }
 
 export function serializeReviewLog(log: ReviewLog): StoredReviewLog {
+  if (log.shownAt !== undefined && (!Number.isFinite(log.shownAt) || log.shownAt < 0 || log.shownAt > log.reviewTime.getTime())) throw new Error('Invalid question show time');
+  if (log.durationMs !== undefined && (!Number.isFinite(log.durationMs) || log.durationMs < 0)) throw new Error('Invalid review duration');
   return {
     ...log,
     dueAt: iso(log.dueAt, 'review due date'),

@@ -1,0 +1,6 @@
+{
+  "wasmSha256": "df899ee1f7912b0511f9777aff3a4dce1d42bd94ea60a5355ab99f9bc1bdfed3",
+  "weightsSha256": "682ba1ff207c51af7de5e2abeb25593362aa706b292cbcc338a1591fad0d935c",
+  "wasmFile": "runtime-v1.wasm",
+  "weightsFile": "big-sm99-682ba1ff.weights.bin"
+}

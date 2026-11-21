@@ -26,6 +26,21 @@ test('new cards keep null previous review dates and review logs retain their tim
   assert.equal(stored.rating, Rating.Again);
 });
 
+test('review timing is retained without inventing measurements for legacy logs', () => {
+  const scheduler = makeScheduler();
+  const now = new Date('2026-11-21T12:00:00Z');
+  const log = scheduler.review({ card: scheduler.newCard({ cardId: 'word', now }), grade: Rating.Good, now }).revlog;
+  const legacy = serializeReviewLog(log);
+  assert.equal('shownAt' in legacy, false);
+  assert.equal('durationMs' in legacy, false);
+  const timed = serializeReviewLog({ ...log, shownAt: now.getTime() - 5000, durationMs: 4300 });
+  assert.equal(JSON.parse(JSON.stringify(timed)).shownAt, now.getTime() - 5000);
+  assert.equal(JSON.parse(JSON.stringify(timed)).durationMs, 4300);
+  assert.throws(() => serializeReviewLog({ ...log, shownAt: now.getTime() + 1 }));
+  assert.throws(() => serializeReviewLog({ ...log, durationMs: -1 }));
+  assert.throws(() => serializeReviewLog({ ...log, durationMs: NaN }));
+});
+
 test('invalid saved dates or memory values are rejected instead of resetting progress', async () => {
   const scheduler = await makeScheduler();
   const stored = serializeCard(scheduler.newCard({ cardId: 'word', now: new Date() }));

@@ -7,7 +7,7 @@
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "node --experimental-strip-types --test src/lib/*.test.ts src/lib/anki/*.test.ts"
+    "test": "node --experimental-strip-types --test src/lib/*.test.ts src/lib/anki/*.test.ts src/lib/rwkv/*.test.ts"
   },
   "dependencies": {
     "@instantdb/react": "^1.0.67",

@@ -1,0 +1,519 @@
+{
+  "words": [
+    {
+      "id": "book-1-ni",
+      "book": 1
+    },
+    {
+      "id": "book-1-hao",
+      "book": 1
+    },
+    {
+      "id": "book-2-xue",
+      "book": 2
+    },
+    {
+      "id": "book-3-sheng",
+      "book": 3
+    },
+    {
+      "id": "book-3-unseen",
+      "book": 3
+    }
+  ],
+  "records": [
+    {
+      "id": "synthetic-00",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-1-ni",
+      "book": 1,
+      "rating": 3,
+      "reviewedAt": 1793548800000,
+      "log": {
+        "cardId": "book-1-ni",
+        "dueAt": "2026-11-01T16:00:00.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-01T16:00:00.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 3,
+        "state": 0,
+        "scheduleStatus": "review",
+        "scheduledDays": 0
+      }
+    },
+    {
+      "id": "synthetic-01",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-1-hao",
+      "book": 1,
+      "rating": 1,
+      "reviewedAt": 1793548860000,
+      "log": {
+        "cardId": "book-1-hao",
+        "dueAt": "2026-11-01T16:01:00.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-01T16:01:00.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 1,
+        "state": 0,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 8000,
+        "shownAt": 1793548852000
+      }
+    },
+    {
+      "id": "synthetic-02",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-1-ni",
+      "book": 1,
+      "rating": 3,
+      "reviewedAt": 1793549420000,
+      "log": {
+        "cardId": "book-1-ni",
+        "dueAt": "2026-11-01T16:10:20.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-01T16:10:20.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 3,
+        "state": 1,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 4500,
+        "shownAt": 1793549415500
+      }
+    },
+    {
+      "id": "synthetic-03",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-1-hao",
+      "book": 1,
+      "rating": 3,
+      "reviewedAt": 1793549500000,
+      "log": {
+        "cardId": "book-1-hao",
+        "dueAt": "2026-11-01T16:11:40.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-01T16:11:40.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 3,
+        "state": 1,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 7000,
+        "shownAt": 1793549493000
+      }
+    },
+    {
+      "id": "synthetic-04",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-2-xue",
+      "book": 2,
+      "rating": 4,
+      "reviewedAt": 1793635200000,
+      "log": {
+        "cardId": "book-2-xue",
+        "dueAt": "2026-11-02T16:00:00.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-02T16:00:00.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 4,
+        "state": 0,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 2000,
+        "shownAt": 1793635198000
+      }
+    },
+    {
+      "id": "synthetic-05",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-3-sheng",
+      "book": 3,
+      "rating": 3,
+      "reviewedAt": 1793635300000,
+      "log": {
+        "cardId": "book-3-sheng",
+        "dueAt": "2026-11-02T16:01:40.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-02T16:01:40.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 3,
+        "state": 0,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 5000,
+        "shownAt": 1793635295000
+      }
+    },
+    {
+      "id": "synthetic-06",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-1-ni",
+      "book": 1,
+      "rating": 3,
+      "reviewedAt": 1793721600000,
+      "log": {
+        "cardId": "book-1-ni",
+        "dueAt": "2026-11-03T16:00:00.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-03T16:00:00.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 3,
+        "state": 2,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 3000,
+        "shownAt": 1793721597000
+      }
+    },
+    {
+      "id": "synthetic-07",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-1-hao",
+      "book": 1,
+      "rating": 2,
+      "reviewedAt": 1793721700000,
+      "log": {
+        "cardId": "book-1-hao",
+        "dueAt": "2026-11-03T16:01:40.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-03T16:01:40.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 2,
+        "state": 2,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 9000,
+        "shownAt": 1793721691000
+      }
+    },
+    {
+      "id": "synthetic-08",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-2-xue",
+      "book": 2,
+      "rating": 3,
+      "reviewedAt": 1794153600000,
+      "log": {
+        "cardId": "book-2-xue",
+        "dueAt": "2026-11-08T16:00:00.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-08T16:00:00.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 3,
+        "state": 2,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 4000,
+        "shownAt": 1794153596000
+      }
+    },
+    {
+      "id": "synthetic-09",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-3-sheng",
+      "book": 3,
+      "rating": 1,
+      "reviewedAt": 1794153800000,
+      "log": {
+        "cardId": "book-3-sheng",
+        "dueAt": "2026-11-08T16:03:20.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-08T16:03:20.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 1,
+        "state": 2,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 15000,
+        "shownAt": 1794153785000
+      }
+    },
+    {
+      "id": "synthetic-10",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-3-sheng",
+      "book": 3,
+      "rating": 3,
+      "reviewedAt": 1794153860000,
+      "log": {
+        "cardId": "book-3-sheng",
+        "dueAt": "2026-11-08T16:04:20.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-08T16:04:20.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 3,
+        "state": 3,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 5000,
+        "shownAt": 1794153855000
+      }
+    },
+    {
+      "id": "synthetic-11",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-1-ni",
+      "book": 1,
+      "rating": 4,
+      "reviewedAt": 1794758400000,
+      "log": {
+        "cardId": "book-1-ni",
+        "dueAt": "2026-11-15T16:00:00.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-15T16:00:00.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 4,
+        "state": 2,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 2000,
+        "shownAt": 1794758398000
+      }
+    },
+    {
+      "id": "synthetic-12",
+      "ownerId": "synthetic-oracle",
+      "wordId": "book-2-xue",
+      "book": 2,
+      "rating": 2,
+      "reviewedAt": 1793808000000,
+      "log": {
+        "cardId": "book-2-xue",
+        "dueAt": "2026-11-04T16:00:00.000Z",
+        "lastReviewAt": null,
+        "reviewTime": "2026-11-04T16:00:00.000Z",
+        "stability": 0,
+        "difficulty": 0,
+        "rating": 2,
+        "state": 2,
+        "scheduleStatus": "review",
+        "scheduledDays": 0,
+        "durationMs": 11000,
+        "shownAt": 1793807989000
+      }
+    }
+  ],
+  "steps": [
+    {
+      "name": "initial replay",
+      "history": [
+        "synthetic-00",
+        "synthetic-01",
+        "synthetic-02",
+        "synthetic-03",
+        "synthetic-04",
+        "synthetic-05",
+        "synthetic-06",
+        "synthetic-07"
+      ],
+      "queryAt": 1793808000000,
+      "expected": [
+        {
+          "id": "book-1-hao",
+          "recall": 0.9008594751358032
+        },
+        {
+          "id": "book-3-sheng",
+          "recall": 0.9013217687606812
+        },
+        {
+          "id": "book-3-unseen",
+          "recall": 0.9210376143455505
+        },
+        {
+          "id": "book-2-xue",
+          "recall": 0.935326099395752
+        },
+        {
+          "id": "book-1-ni",
+          "recall": 0.9861268401145935
+        }
+      ]
+    },
+    {
+      "name": "append four reviews",
+      "history": [
+        "synthetic-00",
+        "synthetic-01",
+        "synthetic-02",
+        "synthetic-03",
+        "synthetic-04",
+        "synthetic-05",
+        "synthetic-06",
+        "synthetic-07",
+        "synthetic-08",
+        "synthetic-09",
+        "synthetic-10",
+        "synthetic-11"
+      ],
+      "queryAt": 1794931200000,
+      "expected": [
+        {
+          "id": "book-1-hao",
+          "recall": 0.7100778818130493
+        },
+        {
+          "id": "book-3-sheng",
+          "recall": 0.8038763999938965
+        },
+        {
+          "id": "book-3-unseen",
+          "recall": 0.9311439990997314
+        },
+        {
+          "id": "book-2-xue",
+          "recall": 0.9431119561195374
+        },
+        {
+          "id": "book-1-ni",
+          "recall": 0.9718132615089417
+        }
+      ]
+    },
+    {
+      "name": "duplicate echo and repeat query",
+      "history": [
+        "synthetic-11",
+        "synthetic-10",
+        "synthetic-09",
+        "synthetic-08",
+        "synthetic-07",
+        "synthetic-06",
+        "synthetic-05",
+        "synthetic-04",
+        "synthetic-03",
+        "synthetic-02",
+        "synthetic-01",
+        "synthetic-00",
+        "synthetic-00"
+      ],
+      "queryAt": 1794931200000,
+      "expected": [
+        {
+          "id": "book-1-hao",
+          "recall": 0.7100778818130493
+        },
+        {
+          "id": "book-3-sheng",
+          "recall": 0.8038763999938965
+        },
+        {
+          "id": "book-3-unseen",
+          "recall": 0.9311439990997314
+        },
+        {
+          "id": "book-2-xue",
+          "recall": 0.9431119561195374
+        },
+        {
+          "id": "book-1-ni",
+          "recall": 0.9718132615089417
+        }
+      ]
+    },
+    {
+      "name": "late review rebuild",
+      "history": [
+        "synthetic-00",
+        "synthetic-01",
+        "synthetic-02",
+        "synthetic-03",
+        "synthetic-04",
+        "synthetic-05",
+        "synthetic-06",
+        "synthetic-07",
+        "synthetic-08",
+        "synthetic-09",
+        "synthetic-10",
+        "synthetic-11",
+        "synthetic-12"
+      ],
+      "queryAt": 1794931200000,
+      "expected": [
+        {
+          "id": "book-1-hao",
+          "recall": 0.7373859882354736
+        },
+        {
+          "id": "book-3-sheng",
+          "recall": 0.8130383491516113
+        },
+        {
+          "id": "book-3-unseen",
+          "recall": 0.9333341121673584
+        },
+        {
+          "id": "book-2-xue",
+          "recall": 0.94061678647995
+        },
+        {
+          "id": "book-1-ni",
+          "recall": 0.9695613384246826
+        }
+      ]
+    },
+    {
+      "name": "rollback rebuild",
+      "history": [
+        "synthetic-00",
+        "synthetic-01",
+        "synthetic-02",
+        "synthetic-03",
+        "synthetic-04",
+        "synthetic-05",
+        "synthetic-06",
+        "synthetic-07",
+        "synthetic-08",
+        "synthetic-09",
+        "synthetic-10",
+        "synthetic-11"
+      ],
+      "queryAt": 1794931200000,
+      "expected": [
+        {
+          "id": "book-1-hao",
+          "recall": 0.7100778818130493
+        },
+        {
+          "id": "book-3-sheng",
+          "recall": 0.8038763999938965
+        },
+        {
+          "id": "book-3-unseen",
+          "recall": 0.9311439990997314
+        },
+        {
+          "id": "book-2-xue",
+          "recall": 0.9431119561195374
+        },
+        {
+          "id": "book-1-ni",
+          "recall": 0.9718132615089417
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "release": "https://github.com/JSchoreels/anki-rwkv/releases/tag/rwkv-family-2026-11-13",
+    "model": "Big Instant-only SM99",
+    "weightsSha256": "682ba1ff207c51af7de5e2abeb25593362aa706b292cbcc338a1591fad0d935c",
+    "statePrecision": "FP32",
+    "inputSource": "Synthetic app records assembled by the production feature/controller code",
+    "predictionSource": "Published unmodified RecurrentModel NumPy reference, FP32 weights and state",
+    "tolerance": 1e-05
+  }
+}

@@ -42,6 +42,10 @@ export interface ReviewLog {
   scheduleStatus: 'new' | 'learning' | 'review';
   scheduledDays: number;
   learningStep?: number;
+  // Optional on historical reviews. New reviews retain the question's show
+  // time and foreground answer time for the recurrent scheduler's features.
+  shownAt?: number;
+  durationMs?: number;
 }
 
 export type ReviewInterval = { kind: 'seconds'; value: number } | { kind: 'days'; value: number };

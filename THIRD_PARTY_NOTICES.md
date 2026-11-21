@@ -13,6 +13,16 @@ Complete application source, dependency versions and build instructions are avai
 
 The unmodified official Anki Python package is used only to generate test fixtures; it is not shipped in the browser application.
 
+## RWKV Big SM99 model and browser runtime
+
+- Model source: [JSchoreels/anki-rwkv, `rwkv-family-2026-11-13`](https://github.com/JSchoreels/anki-rwkv/releases/tag/rwkv-family-2026-11-13), package `rwkv-big-instant-only.zip`, Big Instant-Only SM99. The 2,762,884-parameter FP32 `weights.f32.bin` is bundled unchanged as `public/models/rwkv/big-sm99-682ba1ff.weights.bin`, SHA-256 `682ba1ff207c51af7de5e2abeb25593362aa706b292cbcc338a1591fad0d935c`.
+- Reference implementation: the release's `reference/small_model_recurrent.py` and architecture specification. Copyright (c) 2026 Jonathan Schoreels; its [MIT notice](public/models/rwkv/REFERENCE-LICENSE.txt) is retained. The research source checkout used during implementation was commit `0db609c9cfd1438f50ab8a1e089f455dc9918478`; release assets are identified separately by checksum.
+- Modified: the instant-head inference equations were ported to Rust and WebAssembly SIMD in `scripts/rwkv/runtime.rs`, with a TypeScript wrapper and background-worker integration in `src/lib/rwkv/`. The app runs FP32 weights and recurrent state. The untrained curve head is not used. Source and compiled-asset details, memory limits, and rebuild instructions are in the [model README](public/models/rwkv/README.md).
+- Feature and queue references: the [JSchoreels Anki fork](https://github.com/JSchoreels/anki/tree/main/rslib/src/rwkv), Copyright Ankitects Pty Ltd and contributors, GNU AGPL version 3 or later, and the release's input specification. App-specific changes include deterministic hashed entity codes, UTC calendar features, a fixed 90% recall threshold, and a 60-second repeat guard. Existing Anki learning steps and FSRS fallback metadata remain separate from Instant review selection.
+- Verification data: public synthetic users 900001 and 900002 supplied with the model release. The committed fixtures and regeneration scripts use synthetic histories and contain no training-dataset or app-user records.
+
+The pretrained weights are **not licensed under the reference code's MIT license or this application's AGPL license**. The unchanged [upstream `WEIGHTS-NOTICE.md`](public/models/rwkv/WEIGHTS-NOTICE.md) records the training-data, teacher-model, and architecture provenance and the unresolved redistribution question. This personal study integration does not assert additional permission or relicense those assets.
+
 ## FSRS scalar inference
 
 - Source: [`fsrs` 6.6.2](https://crates.io/crates/fsrs/6.6.2), `src/model.rs` and `src/inference.rs`, maintained by [Open Spaced Repetition](https://github.com/open-spaced-repetition/fsrs-rs).

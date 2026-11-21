@@ -1,4 +1,20 @@
 import type { Memories, MemoryCard } from './scheduler.ts';
+import type { ReviewRecord } from './card-codec.ts';
+
+// Event IDs, rather than timestamps or word IDs, distinguish two real answers
+// to the same card. A remote copy replaces the acknowledged local copy once.
+export function mergeReviewHistory(remote: readonly ReviewRecord[], committed: readonly ReviewRecord[], ownerId: string): ReviewRecord[] {
+  const events = new Map<string, ReviewRecord>();
+  for (const event of committed) if (event.ownerId === ownerId) events.set(event.id, event);
+  for (const event of remote) if (event.ownerId === ownerId) events.set(event.id, event);
+  return [...events.values()].sort((left, right) => left.reviewedAt - right.reviewedAt || (left.id < right.id ? -1 : left.id > right.id ? 1 : 0));
+}
+
+export function pendingCommittedReviews(remote: readonly ReviewRecord[], committed: ReviewRecord[], ownerId: string): ReviewRecord[] {
+  const seen = new Set(remote.filter(event => event.ownerId === ownerId).map(event => event.id));
+  const pending = committed.filter(event => event.ownerId === ownerId && !seen.has(event.id));
+  return pending.length === committed.length ? committed : pending;
+}
 
 function caughtUp(remote: MemoryCard | undefined, committed: MemoryCard): boolean {
   if (!remote) return false;

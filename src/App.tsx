@@ -2,7 +2,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowLeft, Check, Github, RefreshCw, Settings2 } from 'lucide-react';
 import { State, type Grade } from './lib/anki/types';
 import type { Book, Word } from './types';
-import { answerIntervalLabel, grades, intervalLabel, StudyQueue, summarizeWords, type Memories, type Scheduler, type WordCounts } from './lib/scheduler';
+import { grades, intervalLabel, type Memories, type Scheduler, type WordCounts } from './lib/scheduler';
+import { RwkvStudyQueue, summarizeRwkvWords } from './lib/rwkv/queue';
+import { useRwkv } from './lib/rwkv/use-rwkv';
 import { db } from './lib/db';
 import { useProgress } from './lib/progress';
 import { useSettings } from './lib/settings';
@@ -10,6 +12,8 @@ import { remainingNewWords } from './lib/daily-limit';
 import { WritingPad } from './components/WritingPad';
 import { Pronunciation } from './components/Pronunciation';
 import { Settings } from './components/Settings';
+
+type ReviewTiming = { shownAt: number; durationMs: number };
 
 type AppProps = { books: Book[]; words: Word[]; scheduler: Scheduler; user: { id: string; email?: string | null } };
 
@@ -27,22 +31,30 @@ function StudyCard({ word, memory, scheduler, counts, saving, onGrade }: {
   scheduler: Scheduler;
   counts: WordCounts;
   saving: boolean;
-  onGrade: (grade: Grade) => Promise<void>;
+  onGrade: (grade: Grade, timing: ReviewTiming) => Promise<void>;
 }) {
   const [revealed, setRevealed] = useState(false);
   const [enteredAt] = useState(() => new Date());
-  const [previewAt, setPreviewAt] = useState(enteredAt);
+  const timing = useRef({ activeMs: 0, last: performance.now(), visible: document.visibilityState !== 'hidden' });
   const [saveError, setSaveError] = useState('');
   const [pending, setPending] = useState(false);
   const submitting = useRef(false);
   const cardButton = useRef<HTMLButtonElement>(null);
   // Keep this presentation's scheduling input stable while Instant updates optimistically.
   const [card] = useState(() => memory ?? scheduler.newCard({ cardId: word.id, now: enteredAt }));
-  const predictions = useMemo(() => grades.map(({ rating, label }) => ({ rating, label, interval: answerIntervalLabel(scheduler.review({ card, grade: rating, now: previewAt })) })), [card, previewAt, scheduler]);
+  useEffect(() => {
+    const onVisibility = () => {
+      const now = performance.now();
+      if (timing.current.visible) timing.current.activeMs += Math.max(0, now - timing.current.last);
+      timing.current.last = now;
+      timing.current.visible = document.visibilityState !== 'hidden';
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => document.removeEventListener('visibilitychange', onVisibility);
+  }, []);
   useEffect(() => { cardButton.current?.focus({ preventScroll: true }); }, []);
   const flip = () => {
     if (saving || pending) return;
-    if (!revealed) setPreviewAt(new Date());
     setRevealed(value => !value);
     cardButton.current?.focus({ preventScroll: true });
   };
@@ -51,7 +63,8 @@ function StudyCard({ word, memory, scheduler, counts, saving, onGrade }: {
     submitting.current = true;
     setPending(true);
     setSaveError('');
-    try { await onGrade(grade); }
+    const activeMs = timing.current.activeMs + (timing.current.visible ? Math.max(0, performance.now() - timing.current.last) : 0);
+    try { await onGrade(grade, { shownAt: enteredAt.getTime(), durationMs: Math.min(60_000, Math.round(activeMs)) }); }
     catch { setSaveError('Couldn’t save your review. Try again.'); }
     finally { submitting.current = false; setPending(false); }
   };
@@ -70,7 +83,7 @@ function StudyCard({ word, memory, scheduler, counts, saving, onGrade }: {
       </div>
     </div>
     <footer className="review-footer" aria-busy={saving || pending}>
-      <div className="rating-slot">{revealed && <div className="rating-buttons" aria-label="Rate your recall">{predictions.map(({ rating, label, interval }) => <button key={rating} className={`rating-button rating-${label.toLowerCase()}`} disabled={saving || pending} onClick={() => { void submit(rating); }}><span>{label}</span><span className="rating-interval">{interval}</span></button>)}</div>}</div>
+      <div className="rating-slot">{revealed && <div className="rating-buttons" aria-label="Rate your recall">{grades.map(({ rating, label }) => <button key={rating} className={`rating-button rating-${label.toLowerCase()}`} disabled={saving || pending} onClick={() => { void submit(rating); }}><span>{label}</span></button>)}</div>}</div>
       {(saving || pending) && <span className="sr-only" role="status">Saving review</span>}
       {saveError && <p className="save-error" role="alert">{saveError}</p>}
       <StudyCounts counts={counts} className="footer-counts" compact />
@@ -82,60 +95,66 @@ export default function App({ books, words, scheduler, user }: AppProps) {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [currentId, setCurrentId] = useState<string | null>(null);
   const [clock, setClock] = useState(() => new Date());
-  const { memories, introductions, isLoading: progressLoading, error: progressError, saving, syncPending, saveReview } = useProgress({ userId: user.id, now: clock });
+  const { memories, reviews, introductions, isLoading: progressLoading, error: progressError, saving, syncPending, saveReview } = useProgress({ userId: user.id, now: clock });
   const settings = useSettings({ userId: user.id });
+  const rwkv = useRwkv({ userId: user.id, words, reviews, memories, enabled: !progressLoading && !progressError });
   const [settingsOpen, setSettingsOpen] = useState(false);
   const isLoading = progressLoading || settings.isLoading;
   const error = progressError || settings.error;
   const remainingNew = remainingNewWords(settings.dailyNewLimit, introductions);
   const [reviewTurn, setReviewTurn] = useState(0);
-  const studyQueue = useRef(new StudyQueue());
+  const studyQueue = useRef(new RwkvStudyQueue());
   const [signingOut, setSigningOut] = useState(false);
   const [accountError, setAccountError] = useState('');
   const scope = useMemo(() => words.filter(word => word.book === selectedBook?.book), [words, selectedBook]);
   const current = scope.find(word => word.id === currentId);
-  const counts = summarizeWords(scope, memories, clock, remainingNew);
+  const lastCounts = useRef<WordCounts | null>(null);
+  const counts = rwkv.isReady ? summarizeRwkvWords(scope, memories, clock, rwkv.scores, remainingNew)
+    : lastCounts.current ?? { total: scope.length, started: 0, newCount: 0, learningCount: 0, reviewCount: 0 };
+  if (rwkv.isReady) lastCounts.current = counts;
   const unseen = scope.some(word => !memories[word.id]);
   const dailyLimitReached = remainingNew === 0 && unseen;
-  const nextDue = scope.map(word => memories[word.id]?.dueAt).filter((date): date is Date => !!date && date > clock).sort((a, b) => a.getTime() - b.getTime())[0];
+  const nextDue = scope.map(word => memories[word.id]).filter(card => card && (card.state === State.Learning || card.state === State.Relearning)).map(card => card.dueAt).filter((date): date is Date => !!date && date > clock).sort((a, b) => a.getTime() - b.getTime())[0];
 
   useEffect(() => { const timer = window.setInterval(() => setClock(new Date()), 5000); return () => window.clearInterval(timer); }, []);
   useEffect(() => {
-    if (!isLoading && !error && !saving && selectedBook && !current) {
-      const next = studyQueue.current.next(scope, memories, clock, remainingNew);
+    if (!isLoading && !error && rwkv.isReady && !saving && selectedBook && !current) {
+      const next = studyQueue.current.next(scope, memories, clock, rwkv.scores, remainingNew);
       if (next) setCurrentId(next.id);
     }
-  }, [clock, scope, memories, selectedBook, current, isLoading, error, saving, remainingNew]);
+  }, [clock, scope, memories, selectedBook, current, isLoading, error, saving, remainingNew, rwkv.isReady, rwkv.scores]);
 
   // A different device may use the shared allowance while this card is open.
   useEffect(() => {
     if (!saving && !isLoading && current && !memories[current.id] && remainingNew === 0) {
-      setCurrentId(studyQueue.current.next(scope, memories, clock, 0)?.id ?? null);
+      setCurrentId(rwkv.isReady ? studyQueue.current.next(scope, memories, clock, rwkv.scores, 0)?.id ?? null : null);
     }
-  }, [saving, isLoading, current, memories, remainingNew, scope, clock]);
+  }, [saving, isLoading, current, memories, remainingNew, scope, clock, rwkv.isReady, rwkv.scores]);
 
   const begin = (book: Book) => {
-    if (saving || settings.saving || isLoading || error) return;
+    if (saving || settings.saving || isLoading || error || !rwkv.isReady) return;
     const selection = words.filter(word => word.book === book.book);
     studyQueue.current.reset();
     setSelectedBook(book);
-    setCurrentId(studyQueue.current.next(selection, memories, new Date(), remainingNew)?.id ?? null);
+    setCurrentId(studyQueue.current.next(selection, memories, new Date(), rwkv.scores, remainingNew)?.id ?? null);
     window.scrollTo({ top: 0 });
   };
   const closeBook = () => { if (saving) return; studyQueue.current.reset(); setSelectedBook(null); setCurrentId(null); window.scrollTo({ top: 0 }); };
-  const grade = async (rating: Grade) => {
+  const grade = async (rating: Grade, timing: ReviewTiming) => {
     if (!current || saving) return;
     const now = new Date();
     const card = memories[current.id] ?? scheduler.newCard({ cardId: current.id, now });
     const result = scheduler.review({ card, grade: rating, now });
     const updated = { ...memories, [current.id]: result.card };
-    await saveReview(current, result.card, result.revlog);
+    await saveReview(current, result.card, { ...result.revlog, shownAt: Math.min(timing.shownAt, now.getTime()), durationMs: timing.durationMs });
     const updatedIntroductions = new Set(introductions);
     if (card.state === State.New) updatedIntroductions.add(current.id);
     const availableNew = remainingNewWords(settings.dailyNewLimit, updatedIntroductions);
     const queuedAt = new Date();
-    studyQueue.current.answer(current.id, updated, scope, queuedAt, availableNew);
-    setCurrentId(studyQueue.current.next(scope, updated, queuedAt, availableNew)?.id ?? null);
+    studyQueue.current.answer(current.id, updated, scope, queuedAt, rwkv.scores, availableNew);
+    // Saving is complete. The history change invalidates the model snapshot;
+    // selection resumes after the worker has incorporated this exact event.
+    setCurrentId(null);
     setReviewTurn(turn => turn + 1);
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
@@ -151,12 +170,12 @@ export default function App({ books, words, scheduler, user }: AppProps) {
   return <div className={`app-shell ${selectedBook ? 'study-shell' : 'home-shell'}`} onDragStart={selectedBook ? event => event.preventDefault() : undefined} onContextMenu={selectedBook ? event => event.preventDefault() : undefined}>
     {!selectedBook && <header className="app-header"><button className="brand" disabled={saving} onClick={closeBook} aria-label="stopa-Anki home"><span className="brand-mark" lang="zh-Hant">文</span><span>stopa-Anki</span></button><div className="header-actions">{(syncPending || settings.syncPending) && <span className="sync-status" role="status">Waiting to sync</span>}<button className="signout-button" disabled={saving || settings.saving || signingOut} onClick={() => { void signOut(); }}>{signingOut ? 'Signing out…' : 'Sign out'}</button></div></header>}
     {!selectedBook && accountError && <p className="signout-error" role="alert">{accountError}</p>}
-    {isLoading ? <main className="progress-gate" role="status">Loading your progress…</main> : error ? <main className="progress-gate" role="alert"><h1>Couldn’t load your progress.</h1><button className="primary-button" onClick={() => window.location.reload()}>Try again</button></main> : !selectedBook ? <main className="home-main">
+    {isLoading ? <main className="progress-gate" role="status">Loading your progress…</main> : error ? <main className="progress-gate" role="alert"><h1>Couldn’t load your progress.</h1><button className="primary-button" onClick={() => window.location.reload()}>Try again</button></main> : rwkv.error ? <main className="progress-gate" role="alert"><h1>Couldn’t prepare your reviews.</h1><p>Your saved progress is safe.</p><button className="primary-button" onClick={rwkv.retry}>Try again</button></main> : rwkv.isLoading && !current ? <main className="progress-gate" role="status">Preparing your reviews…</main> : !selectedBook ? <main className="home-main">
       <section className="home-intro"><h1>Your books</h1></section>
       <div className="book-list">{books.map(book => {
         const bookWords = words.filter(word => word.book === book.book);
-        const bookCounts = summarizeWords(bookWords, memories, clock, remainingNew);
-        return <button className="book-card" disabled={saving} key={book.id} onClick={() => begin(book)} aria-label={`Study Book ${book.book}. ${bookCounts.total} total, ${bookCounts.newCount} new, ${bookCounts.learningCount} learning, ${bookCounts.reviewCount} reviews due.`}>
+        const bookCounts = summarizeRwkvWords(bookWords, memories, clock, rwkv.scores, remainingNew);
+        return <button className="book-card" disabled={saving || !rwkv.isReady} key={book.id} onClick={() => begin(book)} aria-label={`Study Book ${book.book}. ${bookCounts.total} total, ${bookCounts.newCount} new, ${bookCounts.learningCount} learning, ${bookCounts.reviewCount} reviews due.`}>
           <span className="book-topline"><span className="book-details"><span className="book-title">{book.title}</span><span className="book-total">{bookCounts.total.toLocaleString()} total</span></span></span>
           <span className="book-progress-track" role="progressbar" aria-label="Cards started" aria-valuemin={0} aria-valuemax={bookCounts.total} aria-valuenow={bookCounts.started} title={`${bookCounts.started} / ${bookCounts.total} cards started`}><span style={{ width: `${bookCounts.total ? (bookCounts.started / bookCounts.total) * 100 : 0}%` }} /></span>
           <StudyCounts counts={bookCounts} />
