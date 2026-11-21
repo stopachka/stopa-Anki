@@ -9,7 +9,7 @@ type GuideStatus = 'loading' | 'ready' | 'error';
 const SIZE = 300;
 const pathOf = (points: Stroke) => points.map((point, i) => `${i ? 'L' : 'M'} ${point.x} ${point.y}`).join(' ');
 
-export function WritingPad({ word, active = true, onTap }: { word: string; active?: boolean; onTap: () => void }) {
+export function WritingPad({ word, active = true }: { word: string; active?: boolean }) {
   const characters = Array.from(word);
   // Keep two/three-character words on one line; longer phrases wrap in reading order.
   const columns = characters.length === 4 ? 2 : Math.min(3, Math.max(1, characters.length));
@@ -23,15 +23,11 @@ export function WritingPad({ word, active = true, onTap }: { word: string; activ
   const replayAnimation = useRef<(() => void) | null>(null);
   const activePointer = useRef<number | null>(null);
   const currentRef = useRef<Stroke>([]);
-  const gesture = useRef<{ x: number; y: number; startedAt: number; moved: boolean } | null>(null);
-  const tapReady = useRef(false);
 
   useEffect(() => { setStrokes([]); }, [word]);
   useEffect(() => {
     activePointer.current = null;
     currentRef.current = [];
-    gesture.current = null;
-    tapReady.current = false;
     setCurrent([]);
     if (!active) return;
     let disposed = false;
@@ -123,37 +119,44 @@ export function WritingPad({ word, active = true, onTap }: { word: string; activ
     return { x: Math.max(0, Math.min(width, (event.clientX - rect.left) * width / rect.width)), y: Math.max(0, Math.min(height, (event.clientY - rect.top) * height / rect.height)) };
   };
   const start = (event: PointerEvent<SVGSVGElement>) => {
-    if (activePointer.current !== null || (event.pointerType === 'mouse' && event.button !== 0)) return;
+    if (!active || activePointer.current !== null || (event.pointerType === 'mouse' && event.button !== 0)) return;
     event.preventDefault();
-    tapReady.current = false;
-    gesture.current = { x: event.clientX, y: event.clientY, startedAt: performance.now(), moved: false };
+    event.stopPropagation();
     activePointer.current = event.pointerId;
     event.currentTarget.setPointerCapture(event.pointerId);
     currentRef.current = [position(event)];
-    setCurrent([]);
+    setCurrent(currentRef.current);
   };
   const move = (event: PointerEvent<SVGSVGElement>) => {
-    if (activePointer.current !== event.pointerId || !gesture.current) return;
+    if (activePointer.current !== event.pointerId) return;
     event.preventDefault();
-    if (Math.hypot(event.clientX - gesture.current.x, event.clientY - gesture.current.y) >= 8) gesture.current.moved = true;
+    event.stopPropagation();
     currentRef.current = [...currentRef.current, position(event)];
-    if (gesture.current.moved || event.pointerType === 'pen') setCurrent(currentRef.current);
+    setCurrent(currentRef.current);
   };
   const finish = (event: PointerEvent<SVGSVGElement>) => {
     if (activePointer.current !== event.pointerId) return;
+    event.stopPropagation();
     const completed = event.type === 'pointerup';
-    tapReady.current = completed && !!gesture.current && !gesture.current.moved && event.pointerType !== 'pen' && performance.now() - gesture.current.startedAt < 350;
-    if (completed && !tapReady.current && currentRef.current.length) {
+    // A short tap is a dot, not a request to reveal the answer. Pointer capture
+    // also keeps strokes that end outside the pad away from the card tap target.
+    if (completed && currentRef.current.length) {
       const stroke = currentRef.current;
       setStrokes(previous => [...previous, stroke]);
     }
     activePointer.current = null;
-    gesture.current = null;
     currentRef.current = [];
     setCurrent([]);
   };
 
-  return <section className="practice-area" aria-label="Handwriting practice" style={{ '--practice-columns': columns, '--practice-rows': rows } as CSSProperties} onContextMenu={event => event.preventDefault()} onDragStart={event => event.preventDefault()}>
+  const bufferPointer = (event: PointerEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (event.type === 'pointerdown') event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  return <section className="practice-area" aria-label="Handwriting practice" style={{ '--practice-columns': columns, '--practice-rows': rows } as CSSProperties} onContextMenu={event => event.preventDefault()} onDragStart={event => event.preventDefault()} onClick={event => event.stopPropagation()}>
+    <div className="practice-touch-buffer" aria-hidden="true" onPointerDown={bufferPointer} onPointerMove={bufferPointer} onPointerUp={bufferPointer} onPointerCancel={bufferPointer} onClick={event => { event.preventDefault(); event.stopPropagation(); }} />
     <div className={`practice-surface ${strokes.length ? 'has-ink' : ''}`}>
       <div className="practice-guide" aria-label={`Stroke order for ${word}`}>
         {characters.map((character, index) => <div className="practice-cell" key={`${index}-${character}`}>
@@ -161,7 +164,7 @@ export function WritingPad({ word, active = true, onTap }: { word: string; activ
           {statuses[index] === 'error' && <svg className="practice-fallback" viewBox={`0 0 ${SIZE} ${SIZE}`} aria-hidden="true"><text x="150" y="150" dominantBaseline="central" textAnchor="middle" lang="zh-Hant">{character}</text></svg>}
         </div>)}
       </div>
-      <svg viewBox={`0 0 ${width} ${height}`} className="practice-ink" role="img" aria-label={`Draw ${word} here with your finger, pen, or mouse`} onPointerDown={start} onPointerMove={move} onPointerUp={finish} onPointerCancel={finish} onLostPointerCapture={finish} onClick={event => { event.stopPropagation(); if (tapReady.current) { tapReady.current = false; onTap(); } }}>
+      <svg viewBox={`0 0 ${width} ${height}`} className="practice-ink" role="img" aria-label={`Draw ${word} here with your finger, pen, or mouse`} onPointerDown={start} onPointerMove={move} onPointerUp={finish} onPointerCancel={finish} onLostPointerCapture={finish} onClick={event => { event.preventDefault(); event.stopPropagation(); }}>
         <g stroke="#eaeaea" strokeWidth="0.6" strokeDasharray="3 6">{characters.map((_, index) => {
           const x = (index % columns) * SIZE;
           const y = Math.floor(index / columns) * SIZE;

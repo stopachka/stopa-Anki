@@ -1,13 +1,16 @@
-.practice-area{width:100%;max-width:calc(280px * var(--practice-columns,1));margin:4px auto 0;align-self:center;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.practice-area{position:relative;isolation:isolate;width:100%;max-width:calc(280px * var(--practice-columns,1));margin:4px auto 0;align-self:center;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
 .practice-area *{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
-.practice-surface{position:relative;width:100%;aspect-ratio:var(--practice-columns,1)/var(--practice-rows,1);isolation:isolate;overflow:hidden;border-radius:8px}
+/* Absorb near misses without reducing the writing surface or moving its guides. */
+.study-shell .card-writing .practice-area{pointer-events:auto}
+.practice-touch-buffer{position:absolute;inset:-24px;z-index:0;pointer-events:auto;touch-action:none}
+.practice-surface{position:relative;z-index:1;width:100%;aspect-ratio:var(--practice-columns,1)/var(--practice-rows,1);isolation:isolate;overflow:hidden;border-radius:8px}
 .practice-guide,.practice-ink{position:absolute;inset:0;width:100%;height:100%}
 .practice-guide{display:grid;grid-template-columns:repeat(var(--practice-columns,1),1fr);grid-template-rows:repeat(var(--practice-rows,1),1fr);pointer-events:none;transition:opacity .15s ease}
 .practice-cell{position:relative;min-width:0;min-height:0;aspect-ratio:1}
 .practice-character,.practice-character>div,.practice-character svg{width:100%;height:100%;display:block}
 .has-ink .practice-guide{opacity:.5}
 .practice-ink{touch-action:none;cursor:crosshair}
-.practice-bottom{display:flex;align-items:center;justify-content:flex-end;min-height:40px;gap:8px}
+.practice-bottom{position:relative;z-index:1;display:flex;align-items:center;justify-content:flex-end;min-height:40px;gap:8px}
 .practice-controls{display:flex;align-items:center;margin-left:auto}
 .practice-controls .icon-button{width:36px;height:40px;color:#969696}
 .practice-fallback{position:absolute;inset:0;width:100%;height:100%;font-family:var(--hanzi);font-size:180px;fill:#c9c9c9;pointer-events:none}

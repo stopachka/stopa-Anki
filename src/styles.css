@@ -102,7 +102,7 @@
 .signout-button{font-size:13px;line-height:1.4;color:#737373;padding:8px 0 8px 10px;min-height:40px}
 .signout-button:hover:not(:disabled){color:#222}
 .signout-error{text-align:right;color:#a33d3d;font-size:12px;line-height:1.5;margin:-8px 0 14px}
-.home-tools{display:flex;align-items:center;justify-content:center;gap:4px;margin:23px 0 28px}
+.home-tools{display:flex;align-items:center;justify-content:center;gap:4px;margin:23px 0 8px}
 .home-tools button{color:#737373;font-size:12px;line-height:1.4;padding:9px 12px}
 .home-tools button:hover{color:#333;text-decoration:underline;text-underline-offset:3px}
 .home-tools .home-refresh{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%}
@@ -196,6 +196,7 @@ html:has(.study-shell),body:has(.study-shell){overflow:hidden;overscroll-behavio
 .study-shell .review-footer{background:transparent}
 .study-shell button,.study-shell .practice-ink{pointer-events:auto}
 .study-shell .word-tools,.study-shell .practice-area{pointer-events:none}
+.study-shell .word-tools{position:relative;z-index:2}
 
 /* Finger gestures should draw or flip, never select the surrounding text. */
 .study-shell,.study-shell *{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
@@ -203,6 +204,7 @@ html:has(.study-shell),body:has(.study-shell){overflow:hidden;overscroll-behavio
 .home-tools .home-settings:hover:not(:disabled){background:#f4f4f4;text-decoration:none}
 .home-tools .home-source{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;color:#737373}
 .home-tools .home-source:hover{background:#f4f4f4;color:#333}
+.algorithm-label{margin:0 0 16px;text-align:center;font-size:14px;line-height:1.5;color:#737373}
 .settings-dialog{width:min(420px,calc(100vw - 32px));padding:22px;border:1px solid var(--line);border-radius:22px;color:#242424;background:#fff;box-shadow:0 20px 80px #00000017;max-height:calc(100dvh - 32px)}
 .settings-dialog::backdrop{background:#0003;backdrop-filter:blur(3px)}
 .settings-dialog .dialog-heading{margin-bottom:24px}
